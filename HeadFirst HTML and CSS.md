@@ -30,3 +30,9 @@ li(list item): 리스트 항목. 각 리스트 항목을 식별하는 데 사용
 ## 정의 리스트(definition list)
 <dt>: 하나의 용어 
 <dd>: 용어에 대한 설명
+
+
+## 문자 속성(character entity) 
+<: &lt;
+>: &gt;
+&: &amp;
