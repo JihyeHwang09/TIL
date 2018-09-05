@@ -51,7 +51,7 @@ typeof 2.5 => 'number'
   -  `const`변수
  
  
- ## 제어 흐름
+ ## 제어 구문(흐름)
  ---
  - if 구문
  if (2 > 1) {
@@ -74,6 +74,29 @@ if (true) {
 
 // while 구문
 
+* 만약에 javaScript가 무한루프에 빠졌을 경우-> 메뉴- 도구 더보기 - 작업 관리자 누르기
+ -> 작업 관리자에 cpu 많이 잡아먹는 브라우저만 골라서 종료시키기
+ 
+ - 반복문
+ 
+  - 종류
+  `for문`
+  `while문`
+  -  단순 반복을 할 때, for문을 while문보다 더 자주 쓴다.
+ 
+
+## 함수(function)
+- 'fuction' 키워드를 이용한 함수 선언
+  > function calc(x, y, z) {
+  let sum = x + y;
+  return sum * z;
+  // sum * z -> 반환값
+}
+
+- arrow function
+  > 
+
+- 함수를 호출하고, 함수는 값을 반환한다.
 
 
 
