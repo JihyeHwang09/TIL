@@ -36,6 +36,8 @@
   
   
 * flex-flow: felx-direction & flex-wrap 속성들을 간략히 한 속성이다.
+
+
 * align-content: 세로선 상에 여분의 공간이 있는 경우, Flex 컨테이너 사이의 간격을 조절한다.
   - flex-start
   - flex-end
