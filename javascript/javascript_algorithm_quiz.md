@@ -1,6 +1,4 @@
-
 # repl.it 링크
-
 - [문제 1](https://repl.it/@JihyeHwang09/quiz1)
 
 - [문제 2](https://repl.it/@JihyeHwang09/quiz2)
@@ -22,9 +20,7 @@
 - [문제 9](https://repl.it/@JihyeHwang09/quiz9)
 
 - [문제 10](https://repl.it/@JihyeHwang09/quiz10)
-
 ---
-
 # 풀이
 ## 문제 1
 
