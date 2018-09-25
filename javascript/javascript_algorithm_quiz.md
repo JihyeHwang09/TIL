@@ -73,14 +73,15 @@ isPositive('열다섯', 10, 2); // 에러: Error: 입력값이 잘못되었습�
 ```js
 function printEvenOdd(num) {
     if(num%2 === 0) {
-        console.log('num: 짝수');
+        console.log(num+': 짝수');
     } else {
-        console.log('num: 홀수');
+        console.log(num+': 홀수');
     }
  }
 
 printEvenOdd(5); // 출력: '5: 홀수'
 printEvenOdd(10); // 출력: '10: 짝수'
+
 ```
 
 ## 문제 3-1
