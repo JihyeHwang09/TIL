@@ -19,13 +19,13 @@
 
 - [문제 8](https://repl.it/@JihyeHwang09/quiz8)
 
-- [문제 9](hhttps://repl.it/@JihyeHwang09/quiz9)
+- [문제 9](https://repl.it/@JihyeHwang09/quiz9)
 
 - [문제 10](https://repl.it/@JihyeHwang09/quiz10)
 
 
 
-
+---
 ## 문제 1
 
 두 수 `x`, `y`를 입력받아 큰 수를 반환하는 함수(larger)를 작성하세요.
