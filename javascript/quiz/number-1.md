@@ -22,7 +22,6 @@ function larger(x, y) {
 ```js
 function larger(x, y) {
   let c;
-
   // a가 크면 a를 c에 넣고, 아니면 b를 c에 넣는다.
 
   if (x > y) {
@@ -36,8 +35,6 @@ function larger(x, y) {
 
 ```js
 function larger(x, y) {
-  // a가 크면 a를 c에 넣고, 아니면 b를 c에 넣는다.
-
   if (x > y) {
     return x
   } else {
@@ -48,7 +45,6 @@ function larger(x, y) {
 
 ```js
 function larger(x, y) {
-  // a가 크면 a를 c에 넣고, 아니면 b를 c에 넣는다.
   return x > y ? x : y;
 }
 ```
