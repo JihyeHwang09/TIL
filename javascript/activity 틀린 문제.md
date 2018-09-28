@@ -1,3 +1,3 @@
 
-typeof undefined -> undefined
-typeof null -> object
+* typeof undefined -> undefined
+* typeof null -> object
