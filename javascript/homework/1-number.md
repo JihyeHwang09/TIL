@@ -100,7 +100,7 @@ function diamond(num) {
         // 윗부분 삼각형
         for (let i = 1; i <= num; i++) {
           // 공백 + i = num. 즉, 공백의 개수 = num - i. 
-          // 공백과 '* '을 각각 반복후에 concat으로 연결
+          // 공백과 '* '을 각각 반복한 후에 concat으로 연결
            console.log((" ").repeat(num - i).concat(('* ').repeat(i)));
         }
         // 아랫부분 역삼각형
