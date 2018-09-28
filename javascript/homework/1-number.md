@@ -4,7 +4,9 @@
 ```js
 function primeNumber(num) {
   if (num >= 2) {
+  // 2 이상의 자연수일 경우에만 실행
     for (let i = 2; i < num; i++) {
+   // 
       if (num % i === 0) {
         return `${num}: 소수가 아님`
       } else {
