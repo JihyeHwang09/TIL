@@ -167,10 +167,13 @@ const removeDuplicates = (str) => {
 - 루프로 먼저 풀어보세요.
 - `split` 메소드를 이용해서 풀어보세요.
 ```js
-// @을 본 적이 없다는걸 기억해두자.
-// @를 보기 전까지는 *를 쓴다.
-// @이 나오면 @이 나왔네~하고 저장해두기
-// @을 만난 후에는 그대로 출력 
+<!--  강사님 풀이1 - 루프로 풀이 -->
+// 새로 글씨를 쓸 빈칸을 만들어둔다.
+// 아직 @을 본 적 없다는 사실을 기억해 둔다. 
+// 입력받은 문자열을 한 글자씩 본다.
+// 아직 @을 본 적이 없다면 *를 쓴다.
+// @을 본 적이 있다면 위에서 본 글씨를 그대로 쓴다.
+
 const removeId = (input) => {
   let seen = false
   let memory = ''
@@ -193,7 +196,9 @@ const removeId = (input) => {
   // 변환한 결과를 반환한다.
   return memory
 }
-
+```
+```js
+<!--  강사님 풀이2 - `split` 메소드 사용한 풀이 -->
 const removeId2 = (input) => {
   // '@'을 기준으로 쪼갠 후
   const splitted = input.split('@')
@@ -208,9 +213,127 @@ const removeId2 = (input) => {
 
 문자열을 입력받아, 대문자는 소문자로, 소문자는 대문자로 바꾼 결과를 반환하는 함수를 작성하세요.
 
+```js
+// 내 풀이1 - 루프 사용
+function swapCase(input) {
+// 소문자로 바꿨는데 소문자랑 똑같다 -> 소문자
+// 대문자로 바꿨는데 대문자랑 똑같다 -> 대문자
+let memory = '';
+for (let i = 0; i < input.length; i++) {
+    if (input[i] === input[i].toUpperCase()) {
+    memory += input[i].toLowerCase();
+    
+    }
+    if (input[i] === input[i].toLowerCase()) {
+    memory += input[i].toUpperCase();
+    }
+  }
+    return memory;
+}
+
+swapCase('JavaScript');
+ 'jAVAsCRIPT';
+```
+```js
+<!-- 강사님 풀이1 -->
+// 배열을 사용하지 않고, 루프를 사용해서 풀기
+function swapCase(input) {
+  let memory = ''
+  for (let i = 0; i < input.length; i++) {
+    if (input[i].toUpperCase() === input[i]) {
+      memory += input[i].toLowerCase()
+    } else {
+      memory += input[i].toUpperCase()
+    }
+  }
+  return memory
+}
+
+swapCase('JavaScript')
+```
+```js
+<!-- 내 풀이2- arr메소드 사용 -->
+function swapCase2(input) {
+  let memory ='';
+  const arr = Array.from(input);
+  for (let item of arr) {
+     if (item === item.toUpperCase()) {
+    memory += item.toLowerCase();
+    }
+    if (item === item.toLowerCase()) {
+    memory += item.toUpperCase();
+    }
+  }   
+    return memory;
+}
+swapCase2('JavaScript');
+```
+```js
+<!-- 강사님 풀이2 -->
+// 배열 메소드를 사용해서 풀기
+const swapCase = input => Array.from(input)
+  .map(c => c.toUpperCase() === c ? c.toLowerCase() : c.toUpperCase())
+  .join('')
+
+swapCase('JavaScript')
+```
+
+
+
 ### 문제 10
 
 문자열을 입력받아, 각 단어의 첫 글자를 대문자로 바꾼 결과를 반환하는 함수를 작성하세요. (문자열에 개행이 없다고 가정합니다.)
+```js
+// 내 풀이 - 다 못품(제대로 작동 X)
+function swapCaseFirst(str) {
+  const arr = str.split(" ");
+  let memory =;
+  memory = arr.slice();
+  for (let i = 0; i < arr.length; i++) {
+     
+   memory[i][0] = arr[i][0].toUpperCase();
+  //  대입이 안됨..............
+
+  }
+  return memory;
+}
+
+swapCaseFirst('i am hungry');
+```
+
+```js
+// 강사님 풀이1- 배열을 사용하지 않고, 루프를 사용해서 풀기
+function capitalize(input) {
+  let seenBlank = true
+  let memory = ''
+
+  for (let i = 0; i < input.length; i++) {
+    if (seenBlank) {
+      memory += input[i].toUpperCase()
+    } else {
+      memory += input[i]
+    }
+
+    if (input[i] === ' ') {
+      seenBlank = true
+    } else {
+      seenBlank = false
+    }
+  }
+
+  return memory
+}
+
+capitalize('i am hungry')
+```
+```js
+// 강사님 풀이2- 배열 메소드를 사용해서 풀기
+const capitalize = input => input.split(' ')
+  .map(word => word.slice(0, 1).toUpperCase() + word.slice(1))
+  .join(' ')
+
+capitalize('i am hungry')
+```
 
 ### 문제 11
 
