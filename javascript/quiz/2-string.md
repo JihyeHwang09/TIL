@@ -68,6 +68,25 @@ count('hello')
 ```
 countChar('tomato'); -> {t: 2, o: 2, m: 1, a: 1}
 ```
+```js
+function countChar(input) {
+
+  const obj = {}
+  for (let i = 0; i < input.length; i++) {
+    const char = input[i];
+    // 글자를 본 적이 없다면 "글자": 1을 적어준다.
+    if (!(char in obj)) {
+      obj[char] = 1;
+    } else {
+      obj[char]++;
+    }
+    // 글자를 본 적이 있다면 횟수를 1 증가시켜준다. 
+
+  }
+
+}
+```
+
 
 ### 문제 5
 
