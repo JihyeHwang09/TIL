@@ -45,7 +45,7 @@ getlongest('happy tomato hi alphabet');
 
 ```
 ```js
-//  풀이2 - split메소드, for...if 구문 사용
+//  풀이2 - split메소드, for...of 구문 사용
 const getlongest2 = str => { 
 // splist 메소드를 이용하여 '공백'을 기준으로 나눠서 배열에 담아준다.
  const arr = str.split(' ');
