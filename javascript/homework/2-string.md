@@ -49,7 +49,6 @@ getlongest('happy tomato hi alphabet');
 const getlongest2 = str => { 
 // splist 메소드를 이용하여 '공백'을 기준으로 나눠서 배열에 담아준다.
  const arr = str.split(' ');
- // 
   let longest = '';
  // for...of 루프를 돌면서 단어(item)의 길이와 longest의 길이를 비교한다.
   for (let item of arr) {
