@@ -4,8 +4,6 @@
 ```js
 // 풀이1 - split 메소드를 사용하지 않고, for 루프 사용
 
-
-// longest에 값을 대입
 function getlongest(str) {
 // seenblank: 공백을 봤는지 안봤는지 여부를 boolean형으로 저장
   let seenblank = false;
