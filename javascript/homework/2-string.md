@@ -2,7 +2,7 @@
 
 문자열을 입력받아, 문자열 안에 들어있는 단어 중 가장 긴 단어를 반환하는 함수를 작성하세요. (문자열에 개행이 없다고 가정합니다.)
 ```js
-// <!-- 풀이1 - split 메소드를 사용하지 않고, for 루프 사용-->
+// 풀이1 - split 메소드를 사용하지 않고, for 루프 사용
 function getlongest(str) {
   let seenblank = false;
   let longest = '';
