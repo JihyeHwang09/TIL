@@ -1,6 +1,0 @@
- - Math.random() * COLS 
-  - x축: cols
- 
- - Math.random() * ROWS
-  - y축: rows
-  
