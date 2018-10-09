@@ -76,6 +76,7 @@ function randomStr (length) {
   let randomNum = 0;
   let arr = [];
   for (let i = 0; i < length; i++) {
+  // 아스키 코드
     randomNum = Math.floor(Math.random() * (126-33) + 33) ;
     console.log(randomNum);
      arr[i]= String.fromCharCode(randomNum);
