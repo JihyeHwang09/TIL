@@ -43,5 +43,5 @@ unshift, shift, push, pop, fill, sort
 const items = ['toy', 'bread']
 const prices = [10000, 3000]
 const cart = 
-// cart: [{name: 'toy']
+// cart: [{name: 'toy', }]
 ```
