@@ -26,3 +26,22 @@ unshift, shift, push, pop, fill, sort
 * `pop`:
 * `fill`:
 * `sort`: 
+
+
+
+10-10
+- `splice`: 원본 배열을 수정한다.
+- `reverse`: 원본 배열을 수정한다.
+
+
+- some을 쓰면, 조건을 만족하는 요소가 하나라도 있는지 검사한다.
+  - 만족하는 요소가 하나라도 있으면 true를, 만족하는 요소가 하나도 없으면 false를 반환한다.
+  
+* Math.floor(Math.random() * 40) + 10
+
+```js
+const items = ['toy', 'bread']
+const prices = [10000, 3000]
+const cart = 
+// cart: [{name: 'toy']
+```
