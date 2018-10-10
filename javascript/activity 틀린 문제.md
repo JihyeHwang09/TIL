@@ -37,7 +37,8 @@ unshift, shift, push, pop, fill, sort
 - some을 쓰면, 조건을 만족하는 요소가 하나라도 있는지 검사한다.
   - 만족하는 요소가 하나라도 있으면 true를, 만족하는 요소가 하나도 없으면 false를 반환한다.
   
-* Math.floor(Math.random() * 40) + 10
+* 10보다 크고 50보다 작은 임의의 수를 랜덤으로 반환하는 코드를 Math.random() 메소드를 활용해 적어보기 
+Math.floor(Math.random() * 40) + 10 
 
 
 
