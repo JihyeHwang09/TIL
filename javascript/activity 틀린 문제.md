@@ -39,9 +39,12 @@ unshift, shift, push, pop, fill, sort
   
 * Math.floor(Math.random() * 40) + 10
 
+
+
+**이해 안감..................**
 ```js
 const items = ['toy', 'bread']
 const prices = [10000, 3000]
-const cart = 
-// cart: [{name: 'toy', }]
+const cart = items.map((item, index) => ({name: item, price: prices[index]}));
+// cart: [{name: 'toy', pirce: 10000}, {name: 'bread', price: 3000}]
 ```
