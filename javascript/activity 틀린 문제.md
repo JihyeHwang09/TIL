@@ -49,3 +49,18 @@ const prices = [10000, 3000]
 const cart = items.map((item, index) => ({name: item, price: prices[index]}));
 // cart: [{name: 'toy', pirce: 10000}, {name: 'bread', price: 3000}]
 ```
+
+
+
+
+* 10-11
+- `symbol`은 **유일하고 변경 불가능한(immutable) 원시(primitive)타입이다.**
+- 자바스크립트에서 `참조타입`은 `object`이다.
+
+
+** 이해 안 감.......................**
+* this가 가리키는 값이 원하는 것을 가리키도록 만들 수 있는 방법은 bind, call, apply 메소드를 사용하는 것
+** this- bind, call, apply 정리해야 함!!
+
+
+
