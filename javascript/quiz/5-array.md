@@ -221,7 +221,7 @@ function bingo(arr) {
 // 강사님 풀이2- every , some 메소드 사용
 // every 메소드: 모든 요소가 조건을 만족하면 true, 하나라도 조건을 만족하지 않으면 false를 반환한다.
 // some 메소드: 요소 중에 하나라도 조건을 만족하면 true, 모두 조건을 만족하지 않으면 false를 반환
-// 메소드를 잘 사용하면 루프만 사용했을 때보다 코드 길이를 많이 줄일 수 있다. // 강사님 풀이2
+// 메소드를 잘 사용하면 루프만 사용했을 때보다 코드 길이를 많이 줄일 수 있다. 
 function bingo2(arr) {
   // 가로줄 확인 (some, every)
   const horizontal = arr.some(
