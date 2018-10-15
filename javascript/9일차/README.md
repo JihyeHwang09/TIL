@@ -333,18 +333,21 @@ func2({
 
 - 악의적인 사용자가 자바스크립트로 해킹하는 코드를 게시물로 올렸을 때, 사용자로부터 입력받은 텍스트를  `innerHTML`에 대입하도록 하면 해킹하는 데에 이용될 수 있다. 
 
+[요소 선택하기 & 조작하기 실습 코드(Counter 실습)](https://codepen.io/jihyehwang09/pen/Regzmj)
+
 
 ## 요소 어트리뷰트 조작하기
 - `el.hasAttribute(attrName)`- 어트리뷰트가 있는지 검사하기
 - `el.getAttribute(attrName)`- 어트리뷰트의 값 가져오기
 - `el.setAttribute(attrName, attrValue)`- 어트리뷰트 설정하기
 - `el.removeAttribute(attrName)`- 어트리뷰트 삭제하기
-
+[리스너 붙이기, 떼기 실습 코드](https://codepen.io/jihyehwang09/pen/ePRqjB)
 
 ## 요소 클래스 조작하기
 - `el.classList.add(className, ...)` - 클래스 추가
 - `el.classList.remove(className, ...)`- 클래스 삭제
 - `el.classList.contains(className)`- 클래스 포함 여부 검사
+[클래스 추가, 제거 실습 코드(Form Scripting 실습)](https://codepen.io/jihyehwang09/pen/ePRqjB)
 
 
 - boolean attribute: 붙어있으면 true, 없으면 false기능을 하는 attribute
