@@ -312,13 +312,14 @@ func2({
 - 메모리에 올라간 html파일을 편집하고 있는거니까 하드디스크에 저장되어있는 html문서 내용이 바뀌는 건 X.
 
 ## 요소 선택하기
-- document.querySelector(selector) - CSS 선택자를 통해 단일 요소 가져오기
+- `document.querySelector(selector)` - CSS 선택자를 통해 **단일 요소** 가져오기
     - 이 selector와 일치하는 가장 첫번째 요소 하나를 가져온다.
-
-- document
 - el은 요소 객체
-- document.querySelector(selector) - CSS 선택자를 통해 단일 요소 가져오기
-- 못 찾은 경우 null 반환
+- `document.querySelectorAll(selector)` - CSS 선택자를 통해 **여러 요소** 가져오기
+  - 못 찾은 경우 `null` 반환
+- `el.querySelector(selector)`- CSS 선택자를 통해 **단일 자식 요소**를 가져오기
+- `el.closest(selector)`- 엘리먼트의 조상 중에 CSS 선택자와 일치하는 **가장 가까운 조상 요소** 가져오기 
+- `el.matches(selector)`- 해당 요소가 CSS 선택자와 일치하는지 검사하기
 
 
 ## 요소 내용 조작하기
@@ -332,5 +333,25 @@ func2({
 
 - 악의적인 사용자가 자바스크립트로 해킹하는 코드를 게시물로 올렸을 때, 사용자로부터 입력받은 텍스트를  `innerHTML`에 대입하도록 하면 해킹하는 데에 이용될 수 있다. 
 
+
+## 요소 어트리뷰트 조작하기
+- `el.hasAttribute(attrName)`- 어트리뷰트가 있는지 검사하기
+- `el.getAttribute(attrName)`- 어트리뷰트의 값 가져오기
+- `el.setAttribute(attrName, attrValue)`- 어트리뷰트 설정하기
+- `el.removeAttribute(attrName)`- 어트리뷰트 삭제하기
+
+
+## 요소 클래스 조작하기
+- `el.classList.add(className, ...)` - 클래스 추가
+- `el.classList.remove(className, ...)`- 클래스 삭제
+- `el.classList.contains(className)`- 클래스 포함 여부 검사
+
+
 - boolean attribute: 붙어있으면 true, 없으면 false기능을 하는 attribute
-- 클래스명이 여러 개 들어있을 때, setAttribute를 하면 기존의 여러가지 클래스들이 다 지워진다는 버그가 있다. -> setAttribute로 클래스 이름을 추가하는 작업은 거의 하지 않는다. ->`classList.add(className,...)`하면 쉽게 클래스 이름을 추가할 수 있다.
+- 클래스명이 여러 개 들어있을 때, `setAttribute`를 하면 **기존의 여러가지 클래스들이 다 지워진다**는 버그가 있다. -> `setAttribute`로 클래스 이름을 추가하는 작업은 거의 하지 않는다. ->`classList.add(className,...)`하면 쉽게 클래스 이름을 추가할 수 있다.
+
+
+## 인라인 스타일 조작하기
+- `el.style`- 요소의 인라인 스타일을 읽고 쓸 때 사용하는 객체.  `camelCase` 사용
+  - `el.style.backgroundColor = '#000000'`- 요소의 배경색을 검은색으로 변경
+  
