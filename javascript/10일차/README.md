@@ -7,11 +7,11 @@
 - 텍스트 형태의 데이터를 프로그래밍 언어에서 다시 사용할 수 있도록 변환해주는 절차를 **역직렬화(deserialization)**라고 한다.
 
 - `JSON(JavaScript Object Notation)`은 직렬화 포맷 중에 요즘 압도적으로 사용되고 있는 형식이다.
-```js
-// `JSON.stringify`로 직렬화를 할 수 있습니다.
+- 직렬화 하기: `JSON.stringify`
+- 역직렬화 하기: `JSON.parse`
 
-//   key: 'value',
-//   arr: [1, 2, 3],
+```js
+// `JSON.stringify`로 직렬화를 할 수 있다.
 // stringify라는 메소드에 객체를 넘겨준 것이다.
 // 객체 그대로 전송할 수 없으니 텍스트로 변환해서 전송하는 것이다.
 // 이 객체를 문자열로 변환해준 것이다. 
@@ -19,45 +19,56 @@ JSON.stringify({
   key: 'value',
   arr: [1, 2, 3],
   nullProp: null,
-  undefinedProp: undefined // 값이 `undefined`인 속성은 직렬화 과정에서 제외됩니다.
+  undefinedProp: undefined // 값이 `undefined`인 속성은 직렬화 과정에서 제외된다.
 }); // '{"key":"value","arr":[1,2,3],"nullProp":null}'
 
-// `JSON.parse`로 역직렬화를 할 수 있습니다.
+// `JSON.parse`로 역직렬화를 할 수 있다. 
 JSON.parse('{"key":"value","arr":[1,2,3],"nullProp":null}');
 
 const obj = JSON.parse(text);
 // => { key: 'value', arr: [ 1, 2, 3 ], nullProp: null }
     
 ```
-- JSON은 JavaScript와 아주 유사한 언어이지, 같은 언어가 아니다. 다른 언어이다.
+- `JSON`은 `JavaScript`와 아주 유사한 언어이지, 같은 언어가 아니다. **다른 언어**이다.
 - **JSON을 직접 편집해야 할 때는 JSON이 JavaScript가 아니라는 사실에 주의!!!!**
-
-- 속성 이름에 꼭 쌍따옴표를 둘러주어야 한다.
+#### JSON을 편집할 때 주의할 점
+- 속성 이름에 **꼭 `쌍따옴표("")`**를 둘러주어야 한다.
 - 아주 단순한 객체나 배열만 표현할 수 있다.
   - 객체 리터럴로 만들어진 아주 단순한 형태의 객체만 표현할 수 있다.
 - JSON 문서 안에 함수를 저장할 수 없다. 함수는 JSON으로 변환할 수 없다.
-    - Map, Set, Date, Error, RegExp, Function, Promise와 같이 특별한 동작방식을 가지는 객체들을 제대로 표현할 수 없다.
-- undefined, NaN, Infinity과 같은 값을 표현할 수 없다.
+    -  `Map`, `Set`, `Date`, `Error`, `RegExp`, `Function`, `Promise`와 같이 특별한 동작방식을 가지는 객체들을 제대로 표현할 수 없다.
+- `undefined`, `NaN`, `Infinity`과 같은 값을 표현할 수 없다.
 - 주석을 쓸 수 없다. 
 
 ## Date
-- 협정 세계시(UTC)를 많이 사용한다.
-  - 지구 상의 여러 지역에서는 시간대(timezone)와 일광 절약 시간제(DST)에 따라 서로 다른 시각을 사용한다. 
-  - 조금씩 느려지는 지구 자전 속도에 맞추기 위해 UTC에는 가끔씩 윤초(leap second)가 추가되기도 한다.
+- **협정 세계시(UTC)**를 많이 사용한다.
+  - 지구 상의 여러 지역에서는 **시간대(timezone)**와 **일광 절약 시간제(DST)**에 따라 서로 다른 시각을 사용한다. 
+  - 조금씩 느려지는 지구 자전 속도에 맞추기 위해 UTC에는 가끔씩 **윤초(leap second)**가 추가되기도 한다.
+- **유닉스 시간** - 컴퓨터에서는 시간 데이터를 편하게 다루기 위해서 유닉스 시간이라는 특별한 단위를 사용한다. 유닉스 시간은 UTC 기준 1970년 1월 1일 0시 0분 0초부터 경과한 시간을 초 단위의 정수로 나타낸다.
 - 자바스크립트에도 유닉스 시간이 사용되고 있다.
 
+
+### Date 객체의 생성
+#### Date 생성자의 사용 방법
+- `new Date()` - **현재 시각**을 나타내는 Date 객체를 반환한다.
+- `new Date(value)` 
+  - `new Date(정수)`- `value`가 `정수`인 경우, 이를 **밀리초 단위**의 유닉스 시간으로 간주해서 이에 해당하는 Date 객체를 반환한다. 
+  - `new Date('문자')`- `value`가 `문자열`인 경우, 이 문자열이 나타내는 Date 객체를 반환한다.
+- `new Date(year, month, day, hour, minutes, seconds, milliseconds)`- 년, 월, 일, 시, 분, 초, 밀리초를 **직접 입력**해서 Date 객체를 생성할 수 있다. <br> '월' 부분은 0부터 11까지의 값을 가집니다. <br> 월 이후의 인수는 생략가능하고, 인수를 생략하면 '일'은 1로, 나머지는 모두 0으로 지정됩니다.(월은 0월부터 시작한다. ex) 1월이면, 0을 입력한다.)
+- Date 객체를 생성하고 난 뒤에는, 해당 객체가 나타내는 년, 월, 일, 시, 분, 초, 밀리초를 가져오거나 변경할 수 있다. 
+
 ```js
+// 현재 날짜와 시간
   new Date();
-// => 2018-10-15T02:39:41.453Z
+// => 2018-10-15T11:37:03.577Z
    const d = new Date();
 // => undefined
    typeof d
 // => 'object'
    d.getTime();
+  //  => 1539603459005
+  // 유닉스 시간을 가져옴
 ```
-* `new Date()`: 현재 시각을 나타내는 Date 객체를 반환한다.
-* `new Date(value)`: 
-<!-- 60 X 1000 = 60,000 = '1분'을 나타냄-->
 ```js
    new Date();
 // => 2018-10-15T02:39:41.453Z
@@ -70,9 +81,10 @@ const obj = JSON.parse(text);
    const msec = d.getTime();
 // => undefined
    new Date(msec -  60000);// 유닉스 시간을 Date타입으로 바꿈(msec- 60000)은 1분 전 객체를 얻기 위해서 연산해준 것임 
-=> 2018-10-15T02:39:16.084Z
-  //  d
-=> 2018-10-15T02:40:16.084Z
+<!-- 60 X 1000 = 60,000 = '1분'을 나타냄-->
+// => 2018-10-15T02:39:16.084Z
+   d
+// => 2018-10-15T02:40:16.084Z
 new Date('2018-10-10T01:01:02')
 // => 2018-10-09T16:01:02.000Z
 // Date객체의 포맷으로 value를 넘겨줌
@@ -82,7 +94,7 @@ new Date(year, month, day, hour, minutes, seconds, milliseconds)
 
 ```
 
- - 데이터 객체를 숫자로 바꾼 후에 저장해야 한다.
+- 데이터 객체를 숫자로 바꾼 후에 저장해야 한다.
  ```js
   obj2 = {date: d.getTime()}
 // => { date: 1539571216084 }
@@ -98,12 +110,14 @@ new Date(year, month, day, hour, minutes, seconds, milliseconds)
 
 
 ### 문자열로 변환하기
-- Date 객체가 나타내는 시각을 여러 가지 방법으로 문자열로 변환할 수도 있다.
+- `Date` 객체가 나타내는 시각을 여러 가지 방법으로 문자열로 변환할 수도 있다.
 ```js
 const now = new Date();
+// new Date().toLocaleString()
 //  지역 + 언어: Locale 
-// ex) 캐나다 + 불어, 캐나다 + 영어
-console.log(now.toLocaleString()); // 2017. 12. 10. 오후 12:49:31
+// ex) 캐나다 + 불어, 캐나다 + 영어 
+// 해당 지역과 언어에 맞게 현재 시간이 나온다.
+console.log(now.toLocaleString()); // 2018. 10. 15. 오후 8:47:14
 
 // Z가 붙어있으면 UTC기준이라는 뜻이다.
 // new Date().toISOString()은 사람도 알아보기 쉽기 때문에 시간 표시 형식으로 많이 쓴다. 
@@ -113,7 +127,8 @@ console.log(now.toISOString()); // 2017-12-10T03:49:31.145Z
 - 숫자로 넣고 숫자로 빼서 그걸 Date객체로 바꾸는 게 속편하다.
 
 ### 시간 간격 측정하기
-- 어떤 특정 시간으로부터 경과시간을 계산할 때 
+- `-` 연산자를 사용해서 두 Date 객체 사이의 시간 간격이 얼마나 되는지를 밀리초 단위로 측정할 수 있다.
+- 어떤 특정 시간으로부터 경과시간을 계산할 때 사용한다.
 ```js
 const start = new Date();
 alert('시간이 가고 있습니다...');
@@ -136,12 +151,13 @@ const end = new Date();
 ```
 
 ### 라이브러리 사용하기
-- moment.js라는 라이브러리를 jquery 다음으로 많이 사용함.
-- 간단한 작업을 할 때는 `Date 생성자`를 사용하는데, 실무에서는 `moment.js`를 많이 사용한다.  
+- **moment.js**라는 라이브러리를 jquery 다음으로 많이 사용함.
+- 간단한 작업을 할 때는 `Date 생성자`를 사용하는데, 실무에서는 `moment.js`혹은 ` date-fns`와 같은 별도의 라이브러리를 사용하는 경우가 많다.  
 ```js
 const moment = require("moment")
 // 한국어 사용자를 위해서 moment라이브러리를 사용하겠다.
 moment.locale('ko');
+// 한국 시간을 가져오려고 locale('')안에 ko를 적어줌. 
 // moment(); 현재 시간을 가져오는 객체
 const now = moment();
 // 내가 원하는 형태로 문자열을 만들고 싶을 때, format()에 원하는 형식의 문자열을 넘겨주면 그 형식대로 가져올 수 있다.
@@ -155,19 +171,23 @@ console.log(moment("20120101", "YYYYMMDD").fromNow()); // 6년 전
 
 ## Symbol
 - ES2015에서 도입된 새로운 원시 타입
-- 참조 타입 X
+- 참조 타입 X!!
+- `Symbol` 내장 함수를 통해 새 심볼을 생성할 수 있다.
 ```js
-Symbol();// 새 Symbole값이 만들어짐
+const sym = Symbol();// 새 Symbole값이 만들어짐
+console.log(typeof sym); //symbol
+console.log(sym); // Symbol()
 ```
-- `심볼`은 **객체의 속성 키로 사용**하기 위해서 만들어졌다.
+- `Symbol`은 **객체의 속성 키로 사용**하기 위해서 만들어졌다.
 - 객체의 비밀 통로 역할을 하기 위해서 심볼이 만들어진 것이다.
+- 대괄호 표기법을 통해 심볼을 객체의 속성 키로 사용할 수 있다.
 - 객체의 `속성 키`로 `문자열`과 `심볼`이 사용될 수 있다.
-- 웹프론트엔드 개발자 입장에서 Symbol을 사용할 일은 자주 없으나, Symbol이 무엇인지는 알아야 한다.
+- 웹프론트엔드 개발자 입장에서 `Symbol`을 사용할 일은 자주 없으나, `Symbol`이 무엇인지는 알아야 한다.
 ```js
 const mySymbol = Symbol('my symbol');
 
 const obj = {
-// []이 안의 표현식의 결과값을 속성의 이름으로 사용하고 싶을 때
+// 대괄호 표기법: 대괄호[]안의 표현식의 결과값을 속성의 이름으로 사용하고 싶을 때
 // mySymbol이 객체의 속성 키로 사용되고 있다.
   [mySymbol]: 'hello'
 };
@@ -180,11 +200,13 @@ const obj = {
 
 console.log(obj); // { [Symbol(my symbol)]: 'hello' }
 ```
+
+
+
+
 ```js
-
-
-// Symbol에 있는 내장심볼
 // Symbol.iterator
+// Symbol에 있는 내장심볼
 const arr = [1, 2, 3]
 
 // 배열 뿐만 아니라 iterable 객체를 순회할 때에도 사용할 수 있다.
@@ -212,16 +234,17 @@ for (const item of obj) {
 ```
 
 ## Map
-- 객체와 비슷함
+- `객체`와 비슷함
 - Map은 대응시킨다는 의미가 있음
-- ES2015에서 도입된 Map 생성자는 객체와 유사하게 **키-값 쌍(key-value pair)**을 저장할 수 있는 새로운 자료구조를 제공
+- ES2015에서 도입된 Map 생성자는 객체와 유사하게 **키-값 쌍(key-value pair)**을 저장할 수 있는 새로운 자료구조를 제공한다. 
 ```js
 const m = new Map();
 // new Map().set('key', 'value');
 m.set('hello', 'world');
 console.log(m.get('hello')); // 'world'
-// ('hello')라는 값을 가지고 있냐?
+// ('hello')라는 키의 값을 가져와라. 
 console.log(m.has('hello')); // true
+// ('hello')라는 키를 가지고 있냐?
 
 m.delete('hello');
 console.log(m.get('hello')); // undefined
@@ -242,29 +265,30 @@ console.log(m.get(obj));
 - 객체에는 문자열 키만 저장할 수 있다는 제한점이 있다.
 - 프로토 타입이 붙기 때문에 무겁다는 특징이 있다.
 
-- Map에는 문자열이 아닌 키도 만들 수 있다.
+- `Map`에는 문자열이 아닌 키도 만들 수 있다.
 
 
-- 속성의 개수를 알고 싶을 때
+#### 속성의 개수를 알고 싶을 때
+> Object.keys와 Map 비교
 ```js
  Object.keys(obj).length
  ```
-- Object.keys로 속성의 개수를 알아보려고 하면, 상속 받은 속성까지 알고 싶은지, 열거 가능한 속성만 알고 싶은 지 등등을 고려해야 한다. 
--  Object.keys는 열거 가능한 속성만 반환한다.
+- `Object.keys`로 속성의 개수를 알아보려고 하면, 상속 받은 속성까지 알고 싶은지, 열거 가능한 속성만 알고 싶은 지 등등을 고려해야 한다. 
+-  `Object.keys`는 열거 가능한 속성만 반환한다.
 
 
-- Map에는 열거 가능, 상속 이런 개념이 없으므로 단순하게 사용할 수 있다. 
+- `Map`에는 열거 가능, 상속 이런 개념이 없으므로 단순하게 사용할 수 있다. 
 - Map객체는 데이터의 **추가/삭제가 빈번하게 일어나는 경우** 일반적인 객체보다 훨씬 빠르게 동작한다는 장점이 있다.
-- 반면, JSON 등으로 **직렬화 하기 어렵다**는 특징이 있다. 키 값에 문자열 말고도 여러 가지 값을 넣을 수 있으므로 
+- 반면, JSON 등으로 **직렬화 하기 어렵다**는 특징이 있다. 키 값에 문자열 말고도 여러 가지 값을 넣을 수 있기 때문이다. 
 - 키-값 쌍 형태의 데이터를 다루면서 속도가 중요한 경우에는 Map의 사용을 고려해보자.
 
 
 ### Set
-- 배열과 비슷함.
-- 집합 형태의 자료구조 제공
+- `배열`과 비슷함.
+- **집합 형태**의 자료구조 제공
 - 중복 제거할 때 자주 사용함
-- 중복된 데이터의 저장을 허용하지 않는다.
-- ex) {1, 2} U {1, 3} = {1, 2, 3}
+- **중복된 데이터의 저장을 허용하지 않는다.**
+  - ex) {1, 2} U {1, 3} = {1, 2, 3}
 - 배열과는 다르게 첫 번째, 두 번째 요소라는 순서 개념이 없다.
 - **배열과 유사한 자료구조가 필요하지만, 순서가 중요하지 않은 경우**, 그리고 **중복된 데이터의 저장을 허용하지 않아야 할 경우**, Set의 사용을 고려해보자. 
 ```js
