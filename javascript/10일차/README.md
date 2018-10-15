@@ -245,7 +245,7 @@ console.log(m.get(obj));
 - Map에는 문자열이 아닌 키도 만들 수 있다.
 
 
-속성의 개수를 알고 싶을 때
+- 속성의 개수를 알고 싶을 때
 ```js
  Object.keys(obj).length
  ```
@@ -282,9 +282,15 @@ removeDuplicates([1, 2, 3, 2, 1]);
 
 # DOM API
 ## 이벤트 리스너
-* `el.addEventListener(eventName, callback)`- 이벤트 리스너 등록
-- 이 함수가 실행될 때마다 callback이 실행된다.
+- `el.addEventListener(eventName, callback)`- 이벤트 리스너 등록
+  - 이 함수가 실행될 때마다 callback이 실행된다.
+- `el.removeEventListener(eventName, callback)`- 이벤트 리스너 제거
 
+
+
+## DOM 엘리먼트 생성하기
+- `document.createElement(tagName)` - 새로운 엘리먼트 객체 생성하기
+- `el.cloneNode()`- 엘리먼트 복사하기
 
 - HTML 문서의 구조를 바꾸는 방법
 ```js
@@ -302,21 +308,28 @@ document.createElement('div');
 document.querySelector('footer');
 ```
 ## DOM 트리 조작하기
-- appendChild와 insertBefore는 **요소의 위치를 이동**시킬 때도 사용된다.
-- el.appendChild(newChild): 무조건 마지막에 넣는 것임
-- formEl.insertBefore(divEl2, null)은 formEl.appendChild(divEl2)와 같은 것임.
+- `el.appendChild(newChild)` - 요소 끝에 자식 요소를 삽입하기
+- `el.insertBefore(newChild, beforeWhat)` - 원하는 위치에 자식 요소를 삽입하기
+- `el.replaceChild(newChild, oldChild)` - 자식 요소를 교체하기
+- `el.removeChild(child)` - 자식 요소 제거하기
+
+
+- `appendChild`와 `insertBefore`는 **요소의 위치를 이동**시킬 때도 사용된다.
+- `el.appendChild(newChild)`: 요소 끝에 자식 요소를 삽입하기.무조건 마지막에 넣는 것임
+- `formEl.insertBefore(divEl2, null)`은 `formEl.appendChild(divEl2)`와 같은 것임.
 - insertBefore에 두 번째 인자로 null을 넣으면 appendChild와 같게 작동
-- 이미 문서에 존재하는 요소 객체를 인수에 넣어서 호출하면 그 요소 객체를 복사하지 않고, 위치를 이동시킨다. 
+- **이미 문서에 존재하는 요소 객체를 인수에 넣어서 호출하면, 그 요소 객체를 복사하지 않고, 위치를 이동**시킨다. 
 
 
 ## dataset
+- `el.dataset` - `data-*` 어트리뷰트를 가져오기. (`kebab-case`가 `camelCase`로 변환됨)
 ```js
 formEl.getAttribute('data-foo-bar')
 // "hello"
 // ES전에는 getAttribute로 로 가져왔었는데, 
 // ES5부터는 dataset으로 짧게 가져올 수 있다. 
 const formEl = document.querySelector('form')
-undefined
+// undefined
 formEl.dataset.fooBar
 // "hello"
 formEl.dataset.index
@@ -324,43 +337,61 @@ formEl.dataset.index
 ```
 
 ## 노드 간 관계
+- `el.childNodes` - 자식 노드
+- `el.firstElementChild` - 첫 번째 자식 요소
+- `el.lastElementChild` - 마지막 자식 요소
+- `el.previousElementSibling` - 이전 형제 요소
+- `el.nextElementSibling` - 다음 형제 요소
+- `el.parentElement`- 부모 요소
 - `el.offsetParent`: 포지션 세팅이 되어있는 가장 가까운 조상 요소
-
+[DOM 트리 조작하기 & 노드 간 관계 이용 예시 코드(추가/ 삭제 기능 Todo List)](https://codepen.io/jihyehwang09/pen/ePGqza?editors=1010)
 
 ## 요소의 크기 및 위치
-- `el.getBoundingClientRect()`를 가장 많이 사용함. 
-- formEl.getBoundingClientRect()했을 때, 반환되는 값 중 x, y는 익스플로러에서는 사용할 수 없으므로
-- bottom, height, left, right, top, width 이 6가지 요소를 사용하도록 하자. 
+- `el.getBoundingClientRect()`- 화면 좌측 상단으로부터의 요소의 위치 및 요소의 크기를 반환
+- `el.offsetHeight` / `el.offsetWidth`- border를 **포함한** 요소의 크기
+- `el.clientHeight` / `el.clientWidth` - border를 **제외한** 요소의 크기
+- `el.scrollHeight` / `el.scrollWidth` - 요소 내부에 포함된 콘텐츠의 크기 (스크롤 가능한 영역의 크기)
+- `el.offsetTop` / `el.offsetLeft` - offsetParent로부터의 요소의 위치
+- `el.clientTop` / `el.clientLeft` - border의 너비
+
+
+- `el.getBoundingClientRect()`를 **가장 많이 사용함.** 
+- formEl.getBoundingClientRect()했을 때, 반환되는 값 중 x, y는 익스플로러에서는 사용할 수 없다.
+- `bottom`, `height`, `left`, `right`, `top`, `width` 이 6가지 요소를 사용하도록 하자. 
 
 - absolute position을 할 때 기준이 되는 부모가 있는데, 이 부모는 position: relative가 된다. 
 
 
 ## 이벤트 객체
-- MouseEvent
-- altKey: false // altKey를 누른채로 실행하면 true가 반환됨
-- button: 
-- clientX: 화면 가장 왼쪽 위, 끝에서부터의 X좌표
-- clientY: 화면 가장 왼쪽 위, 끝에서부터의 Y좌표
+- `e.target` - 실제로 이벤트를 일으킨 요소
+- `e.currentTarget` - 이벤트 전파 과정 중 현재 이벤트가 위치한 요소
+- `e.stopPropagation()` - 이벤트 전파 과정을 멈추기. 
+  - `e.stoprPropagation()`를 만나면, 이벤트 전파 과정이 멈추고 그 이후 이벤트는 실행되지 않는다.
 
+> MouseEvent
+> altKey: false // altKey를 누른채로 실행하면 true가 반환됨
+> button: 
+> clientX: 화면 가장 왼쪽 위, 끝에서부터의 X좌표
+> clientY: 화면 가장 왼쪽 위, 끝에서부터의 Y좌표
 
 - `e.preventDefault()`: 이벤트가 일으키는 브라우저의 기본 동작과정을 취소하기
   - ex) 링크를 클릭해도 페이지가 넘어가지 않게 만들기
 - 이벤트는 해당 태그가 아니라 그 안에 있는 태그를 클릭해도 발생할 수 있다. 
-  - ex) form 태그 안에 있는 label태그
+  - ex) form 태그에 마우스 이벤트를 걸었는데, 안에 있는 label태그를 눌러도 마우스 이벤트가 작동한다. 
 
 
-- `e.stopPropagation()`: 이벤트 전파 과정을 멈추기. 
-- `e.stoprPropagation()`를 만나면 이벤트 전파 과정이 멈추고 그 이후 이벤트는 실행되지 않는다.
 
 ## 이벤트 전파
-- 1. Capturing 
-- 2. At Target
-- 3. Bubbling
+1. `Capturing` 
+2. `At Target`
+3. `Bubbling`
+![이벤트 전파](https://github.com/fds11/fds-dom-api/blob/master/images/eventphases.png)
 
 - 이벤트의 실행 순서가 중요할 때가 있다. 
-  - ex) 부모 요소의 이벤트 요소가 먼저 실행되어야 하는 경우, Capturing단계에 이벤트를 등록해줘야하는 경우가 있다. 
-- Capturing과정에 걸렸을 때 이벤트를 실행할 것인지, Bubbling과정에 걸렸을 때 이벤트를 실행할 것인지 정해줄 수 있다. 
+  - ex) 부모 요소의 이벤트가 먼저 실행되어야 하는 경우, `Capturing`단계에 이벤트를 등록해줘야 하는 경우가 있다. 
+- `Capturing`과정에 걸렸을 때 이벤트를 실행할 것인지, `Bubbling`과정에 걸렸을 때 이벤트를 실행할 것인지 정해줄 수 있다. 
 - 그냥 addEventListener하면 Bubbling과정에서 이벤트가 실행된다.
 - Capturing 단계에 이벤트가 실행되게 하려면, true값을 주면 된다.
 
+[이벤트 전파 관련 예시 (Capturing & Bubbling 실습)](https://codepen.io/jihyehwang09/pen/KGyPYa)
 
