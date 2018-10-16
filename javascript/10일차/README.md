@@ -415,7 +415,10 @@ formEl.dataset.index
   - ex) 부모 요소의 이벤트가 먼저 실행되어야 하는 경우, `Capturing`단계에 이벤트를 등록해줘야 하는 경우가 있다. 
 - `Capturing`과정에 걸렸을 때 이벤트를 실행할 것인지, `Bubbling`과정에 걸렸을 때 이벤트를 실행할 것인지 정해줄 수 있다. 
 - 그냥 addEventListener하면 Bubbling과정에서 이벤트가 실행된다.
-- Capturing 단계에 이벤트가 실행되게 하려면, true값을 주면 된다.
+- Capturing 단계에 이벤트가 실행되게 하려면, 
+- addEverListener의 3번째 인수로 true를 넘겨주면, capturing단계에서 이벤트가 실행되게 할 수 있다.
 
-[이벤트 전파 관련 예시 (Capturing & Bubbling 실습)](https://codepen.io/jihyehwang09/pen/KGyPYa)
+- [이벤트 전파 관련 예시 (Capturing & Bubbling 실습)](https://codepen.io/jihyehwang09/pen/KGyPYa)
+
+
 
