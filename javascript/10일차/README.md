@@ -368,7 +368,7 @@ formEl.dataset.index
 - `el.nextElementSibling` - 다음 형제 요소
 - `el.parentElement`- 부모 요소
 - `el.offsetParent`: 포지션 세팅이 되어있는 가장 가까운 조상 요소
-[DOM 트리 조작하기 & 노드 간 관계 이용 예시 코드(추가/ 삭제 기능 Todo List)](https://codepen.io/jihyehwang09/pen/ePGqza?editors=1010)
+- [DOM 트리 조작하기 & 노드 간 관계 이용 예시 코드(추가/ 삭제 기능 Todo List)](https://codepen.io/jihyehwang09/pen/ePGqza?editors=1010)
 
 ## 요소의 크기 및 위치
 - `el.getBoundingClientRect()`- 화면 좌측 상단으로부터의 요소의 위치 및 요소의 크기를 반환
@@ -409,7 +409,7 @@ formEl.dataset.index
 1. `Capturing` 
 2. `At Target`
 3. `Bubbling`
-![이벤트 전파](https://github.com/fds11/fds-dom-api/blob/master/images/eventphases.png)
+- ![이벤트 전파](https://github.com/fds11/fds-dom-api/blob/master/images/eventphases.png)
 
 - 이벤트의 실행 순서가 중요할 때가 있다. 
   - ex) 부모 요소의 이벤트가 먼저 실행되어야 하는 경우, `Capturing`단계에 이벤트를 등록해줘야 하는 경우가 있다. 
