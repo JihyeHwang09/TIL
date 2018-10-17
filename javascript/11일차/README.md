@@ -42,7 +42,7 @@
 - `submit` - 폼 전송이 일어났을 때 발생 
 
 ### 폼 이벤트(submit)
-[todo List(form 이용) codePen 예시]()
+[todo List(form 이용) codePen 예시](https://codepen.io/jihyehwang09/pen/rqYEmJ)
 
 - 요즘은 form 태그의 내장 기능으로 전송하지 않고, 자바스크립트로 직접 구현을 해서 전송한다. -> 따라서 form태그의 속성을 세세하게 알 필요는 X. 가끔 예전에 만든 프로젝트를 만져야 할 때 알아야하기 때문에 알고는 있어야 함. 
 
