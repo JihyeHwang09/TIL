@@ -16,12 +16,12 @@
 - `mouseenter`, `mouseleave`은 **버블링이 일어나지 않는다.**
 
 ### 2가지 방법
-- 1. DOM객체를 실제로 만들어서 넣기
+1. DOM객체를 실제로 만들어서 넣기
 - html 문서에 직접 써넣을 수 없는 경우
 - 코드 작성 시점에 정확히 요소가 몇 개 표시될 지 모를 경우
     - ex) 사용자의 입력을 받아서 할 경우(Todo List 할 일 추가할 때)
     - ex) createElement, appendChild, removeChild 등을 사용
-- 2. CSS Style을 다르게 먹이는 방법 
+2. CSS Style을 다르게 먹이는 방법 
 - 코드 작성 시점에 정확히 요소가 몇 개 표시될 지 아는 경우
     - ex) display: block or none했다가 나타나게 하기
 
