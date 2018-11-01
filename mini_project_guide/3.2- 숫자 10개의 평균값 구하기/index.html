@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <title>평균값 계산기</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="css/style.css" rel="stylesheet"> -->
+        <script>
+            // 전체 숫자의 개수
+            var totalNumbers = Number(prompt('숫자의 개수를 입력해주세요.'));
+            // 총합을 저장하기 위한 변수 
+            var sum = 0;
+            // i가 1부터 10이 될 때까지 순차적으로 1씩 증가
+            for (var i = 1; i <= totalNumbers; i++) {
+                var value = prompt(i + '번 숫자를 입력해주세요.');
+
+                // 입력받은 문자열을 숫자로 변환하여 총합 변수에 더함
+                sum += Num(value);
+            }
+
+            // 평균값을 계산한다
+            var avg = sum / totalNumbers;
+            alert('평균값: '+ avg);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

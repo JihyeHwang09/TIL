@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>스타일 겹침</title>
+    <style>
+        p {color: red !important;} 
+        #wrap{color: green;}
+        .box1.box2.box3.box4.box5.box6.box7.box8.box9.box10.box11{color: blue;}
+    </style>
+</head>
+<body>
+    <p>여기는 단락 입니다.</p>
+    <p>여기는 단락 입니다.</p>
+    <p id="wrap" class="box1 box2 box3 box4 box5 box6 box7 box8 box9 box10 box11">여기는 단락 입니다.</p>
+</body>
+</html>
+
+<!-- 파워가 같을 경우 나중에 선언한 게 적용된다.
+Element Selector(1점)
+Class Seletor(10점)
+Inline Seletor(100점)
+-->
+<!-- class는 id를 이길 수 X. 
+!important는 모르고 사용하면 독이된다.  -->

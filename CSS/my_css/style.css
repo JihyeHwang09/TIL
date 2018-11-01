@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700&subset=korean");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css");
+/* 스타일 초기화 */
+/* 전체 선택자 */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 1em;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+
+ul {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* CSS 모듈*/
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+/* 숨김 콘텐츠 */
+.readable-hidden, skip-nav {
+    background: red;
+    /* display: none;*/
+    /* visibility: hidden; */
+    /* 화면에서만 감추겠다는 의미 */
+    position: absolute;
+    /* left: -9999em; -> 브라우저 밖으로 보내려고. 이 숫자를 딱 정해서 쓰는 건 X. 
+    많이 사용하지만 스크린 리더 사용시, 가상 커서가 포커스할 수 X. 초점을 받을 수 X.   */
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    /* overflow: hidden; 넘치는 영역을 감추라는 뜻 */
+    margin: -1px;
+    clip: rect(0, 0, 0, 0)
+    /* clip: rect 사각형 단위로 화면을 잘라내는 것 */
+     /* clip: rect(0, 0, 0, 0) -> 화면을 다 자르고 안보이겠다는 의미 */
+    }
+    .skip-nav:focus {
+        width: 100%;
+        height: auto;
+        padding: 1em;
+        background: #000;
+        color: #fff;
+        text-align: center;
+        margin: 0;
+        clip: rect(auto, auto, auto, auto);
+        z-index: 100;
+    }
+
+/* 본문 스타일 */
+html {
+    font-size: 10px;
+}
+body {
+    color: #181818;
+    background-color: #fff;
+    font-family: "Noto Sans KR", sans-serif;
+    /* 첫번째 글꼴이 없으면 두 번째 글꼴로 가져오라는 뜻  */
+    font-weight: 400;
+    font-size: 1.4rem;
+
+}
+
+/* 하이퍼링크 스타일 */
+a {
+    /* 부모가 가진 색깔을 물려받을 거라는 뜻  */
+    color: inherit;
+    text-decoration: none;
+    /* cursor: crosshair; */
+    /* 마우스를 올렸을 때 모양을 원하는 모양으로 바꿀 수 있음.  */
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* 레이아웃 */
+.container {
+    background-color: #aaa; 
+}
+.header , .visual , .main , .slogan , .footer {
+    box-sizing: border-box;
+    /* box-sizing:default값은 content-box임 */
+    width: 940px;
+    margin : 0 auto;    
+}
+/* 헤더 */
+.header  {
+    background-color: #fff;
+    position: relative;
+    padding: 0 30px;
+    border-radius: 0 0 15px 15px;
+     /* 앱솔루트의 기준을 잡기위해 만든 것 */
+}
+/* 로고 */
+.logo {
+    position: absolute;
+    /* 레이어가 됐다는 것 멤버 위에 떠 있는 개체가 된것 */
+    top: 50px;
+    left: 65px;
+}
+/* 멤버 링크 */
+.member {
+    text-align: right;
+    font-size: 0;
+    padding: 2px 0 2px 0;
+    margin-right: -10px;    
+    /* right: 10px; */
+    /* position: relative; */
+    /* margin-left: 10px;
+    width: 880px; */
+    /* float: right; */
+    /* width: 100%; */
+    
+    /* display: flex; */
+    /* justify-content: flex-end; */
+    /* justify-content: default값은 flex-start임 */
+}
+
+
+.member li, .member a {
+    display: inline-block;
+}
+.member li {
+    font-size: 1.4rem;
+    /* margin-left: -5px; */
+    /* font-size: 0; */
+    /* padding은 음수값 사용할 수 X. margin은 투명하므로 음수값 사용할 수 O */
+    /* float: left; */
+    /* 하위 선택자. 선택을 잘하는 게 중요하다.  */
+    /* 그냥 li라고 쓰면  모든 li가 선택되므로 */
+}
+
+.member li:nth-child(n+2)::before {
+    content: ":";
+    /* margin: 0 10px; */
+    /* html은 공백문자 여러 개를 한 칸으로 처리함.  */
+}
+/* 
+.member li::before {
+    content: ":";
+    
+} */
+
+/* .first::before {
+    content: "" !important;
+}
+
+
+/* .member li a {} */
+.member a {
+    padding: 8px 10px;
+    text-transform: uppercase;
+}
+.navigation {
+    padding-bottom: 50px;
+}
+.menu {
+    border-top: 2px solid #000;
+    background-color: #F37335;
+    background-image: repeating-linear-gradient(to bottom, #fdc830 0%, #cbad6d 30% #cbad6d 60% #fdc830 100%);
+    padding-left: 225px;
+    height: 47px;
+    border-radius: 0 0 5px 5px;
+}
+
+/* 비주얼 */
+.visual {
+    background-color: lime;
+    height: 10vh;
+}
+/* 메인 */
+.main {
+    background-color: blue;
+    height: 60vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 30px 0;
+}
+.group1 {
+    background-color: skyblue;
+    width: 250px;
+}
+.group2 {
+    background-color: skyblue;
+    width: 380px;
+}
+.group3 {
+    background-color: skyblue;
+    width: 190px;
+}
+/* 슬로건 */
+.slogan {
+    background-color: lime;
+    height: 10vh;
+}
+/* 푸터 */
+.footer-bg {
+    background-color: purple;
+}
+.footer {
+    background-color: pink;
+    height: 10vh;
+}
+
+

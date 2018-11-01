@@ -1,0 +1,20 @@
+.option {
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+}
+.right-modal {
+  display: none;
+}
+.wrong-modal {
+  display: none;
+}
+.right-modal.open {
+  display: block;
+}
+/* .wrong-modal. open은 wrong-modal의 자손 중에 .open인 요소 */
+/* 사이에 띄어쓰기 하면 '||'의 의미임 */
+/* wrong-modal.open을 붙여쓰면 '&&'의 의미임 */
+.wrong-modal.open {
+  display: block;
+}

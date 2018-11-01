@@ -1,0 +1,17 @@
+body{
+    counter-reset: myCounter mySecondCounter 40;
+}
+h3:before{
+    counter-increment: myCounter mySecondCounter -10;
+    content: "OS No. "counter(myCounter)". ";
+    color: blue;
+    font-size: 12px;
+    font-style: italic;
+}
+
+h3:after{
+    content: "" counter(mySecondCounter);
+    color: red;
+    vertical-align: super;
+    font-size: 10pt;
+}
