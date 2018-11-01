@@ -23,6 +23,9 @@
 >>>>>>> 691b722... Update README.md
 =======
 [15일차](https://github.com/JihyeHwang09/TIL/blob/master/javascript/12일차/README.md)  
+<<<<<<< HEAD
 [16]
 >>>>>>> e41f1e8... Update README.md
+=======
+>>>>>>> 0430fbd... Update README.md
 
