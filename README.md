@@ -12,6 +12,7 @@
 [11일차](https://github.com/JihyeHwang09/TIL/blob/master/javascript/11일차/README.md)<br>
 [12일차](https://github.com/JihyeHwang09/TIL/blob/master/javascript/12일차/README.md)  
 <<<<<<< HEAD
+<<<<<<< HEAD
 [13일차](https://github.com/JihyeHwang09/TIL/blob/master/javascript/13일차/README.md)  
 [14일차](https://github.com/JihyeHwang09/TIL/blob/master/javascript/14일차/README.md)  
 [15일차](https://github.com/JihyeHwang09/TIL/blob/master/javascript/15일차/README.md)  
@@ -28,4 +29,9 @@
 >>>>>>> e41f1e8... Update README.md
 =======
 >>>>>>> 0430fbd... Update README.md
+=======
+[13일차](https://github.com/JihyeHwang09/TIL/blob/master/javascript/13일차/README.md)  
+[14일차](https://github.com/JihyeHwang09/TIL/blob/master/javascript/14일차/README.md)  
+[15일차](https://github.com/JihyeHwang09/TIL/blob/master/javascript/15일차/README.md)  
+>>>>>>> 9258b02b9aa31471d993882367e82de0e95a0ed2
 
