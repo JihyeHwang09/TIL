@@ -1,0 +1,173 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "admin"
+        },
+        {
+            "id": 2,
+            "username": "customer"
+        },
+        {
+            "username": "fast",
+            "hashedPassword": "$2a$10$zkojdvtuce2HdbpaA3sU7ewDI8iZsjHsWsCgyLZ9AFwCFxrCBMd9C",
+            "id": 3
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "category": "best",
+            "title": "[세계1위감사] 컬처렐 다이제스티브 헬스 30C x 2개(60일분)",
+            "description": "세계판매 1위†† 프로바이오틱스 유산균 컬처렐 - 베스트셀러 식물성 캡슐형",
+            "mainImgUrl": "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F1.jpg?1541602203420",
+            "detailImgUrls": [
+                "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F1.jpg?1541660278235"
+            ]
+        },
+        {
+            "id": 2,
+            "category": "best",
+            "title": "[클릭시할인] 클레오파트라의 시크릿 여왕의 석류진 프리미엄 28P (28일분)",
+            "description": "갱년기 여성의 건강에 도움을 줄 수 있음",
+            "mainImgUrl": "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F2.jpg?1541602215414",
+            "detailImgUrls": [
+                "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F2.jpg?1541660595975"
+            ]
+        },
+        {
+            "id": 3,
+            "category": "best",
+            "title": "[추석특가] 홍오메가3 500mg x 240캡슐  x 1개(2개월분)",
+            "description": "홍삼과 오메가3를 한번에!",
+            "mainImgUrl": "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F3.jpg?1541602224937",
+            "detailImgUrls": [
+                "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F8.jpg?1541660605124"
+            ]
+        },
+        {
+            "id": 4,
+            "category": "best",
+            "title": "레디큐 드링크 100ml 10병",
+            "description": "맛있는 숙취해소",
+            "mainImgUrl": "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F4.jpg?1541602228943",
+            "detailImgUrls": [
+                "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F4.jpg?1541660629589"
+            ]
+        },
+        {
+            "id": 5,
+            "category": "best",
+            "title": "트리플케어 1000MG/30캡슐 x 1개 (1개월분)",
+            "description": "비타민, 미네랄, 오메가3 기능성분 15가지, 16여종 다양한 부원료",
+            "mainImgUrl": "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F5.jpg?1541602234470",
+            "detailImgUrls": [
+                "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F5.jpg?1541660596346"
+            ]
+        },
+        {
+            "id": 6,
+            "category": "best",
+            "title": "워터 다이어트 옥수수맛(2주분)",
+            "description": "물어 타서 마시는 워터다이어트! 체지방 감소에 도움!",
+            "mainImgUrl": "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F6.jpg?1541602235113",
+            "detailImgUrls": [
+                "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F7.jpg?1541660591248"
+            ]
+        },
+        {
+            "id": 7,
+            "category": "best",
+            "title": "워터 다이어트 옥수수맛 1+1 (총 4주분)",
+            "description": "물어 타서 마시는 워터다이어트! 체지방 감소에 도움!",
+            "mainImgUrl": "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F7.jpg?1541602235778",
+            "detailImgUrls": [
+                "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F6.jpg?1541660591589"
+            ]
+        },
+        {
+            "id": 8,
+            "category": "best",
+            "title": "홍오메가3 500mg x 240캡슐  x 2개(4개월분)",
+            "description": "홍삼과 오메가3를 한번에!",
+            "mainImgUrl": "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F8.jpg?1541602236539",
+            "detailImgUrls": [
+                "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F3.jpg?1541660616544"
+            ]
+        },
+        {
+            "id": 9,
+            "category": "best",
+            "title": "혈행에 좋은 오메가Q x 1개(1개월분)",
+            "description": "중금속 걱정 없는 100%순수 멸치(엔쵸비)에서 뽑은 오메가3",
+            "mainImgUrl": "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F9.jpg?1541602935604",
+            "detailImgUrls": [
+                "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F9.jpg?1541660599017"
+            ]
+        }
+    ],
+    "options": [
+        {
+            "id": 1,
+            "productId": 1,
+            "title": "no-wrappend",
+            "price": "54,900"
+        },
+        {
+            "id": 2,
+            "productId": 1,
+            "title": "gift-wrapped",
+            "price": "54,900"
+        },
+        {
+            "id": 3,
+            "productId": 2,
+            "title": "no-wrappend",
+            "price": "209,000"
+        },
+        {
+            "id": 4,
+            "productId": 2,
+            "title": "gift-wrapped",
+            "price": "209,000"
+        }
+    ],
+    "cartItems": [
+        {
+            "id": 1,
+            "userId": 2,
+            "optionId": 1,
+            "quantity": 2,
+            "ordered": false
+        },
+        {
+            "id": 2,
+            "userId": 2,
+            "optionId": 2,
+            "quantity": 3,
+            "ordered": true,
+            "orderId": 1
+        },
+        {
+            "optionId": 2,
+            "quantity": 1,
+            "ordered": false,
+            "userId": 3,
+            "id": 3
+        },
+        {
+            "optionId": 1,
+            "quantity": 1,
+            "ordered": false,
+            "userId": 3,
+            "id": 4
+        }
+    ],
+    "orders": [
+        {
+            "id": 1,
+            "userId": 2,
+            "orderTime": 1541501826042
+        }
+    ]
+}
