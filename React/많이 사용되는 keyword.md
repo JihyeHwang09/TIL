@@ -1,0 +1,1 @@
+- 제어되는 컴포넌트 (Controlled Components) vs 제어되지 않는 컴포넌트(uncontrolled Componets)

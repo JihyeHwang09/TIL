@@ -15,9 +15,9 @@
           "category": "best",
           "title": "[세계1위감사] 컬처렐 다이제스티브 헬스 30C x 2개(60일분)",
           "description": "세계판매 1위†† 프로바이오틱스 유산균 컬처렐 - 베스트셀러 식물성 캡슐형",
-          "mainImgUrl": "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F1.jpg?1541950294157",
+          "mainImgUrl": "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F1.jpg?1541950752876",
           "detailImgUrls": [
-            "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F1.jpg?1541950262274"
+            "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2Fdetail1.jpg?1541950792887"
           ]
         },
         {
@@ -98,6 +98,36 @@
           "mainImgUrl": "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F9.jpg?1541935201904",
           "detailImgUrls": [
             "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F9.jpg?1541949673631"
+          ]
+        },
+        {
+          "id": 10,
+          "category": "gift-set",
+          "title": "홍오메가3 500mg x 240캡슐  x 2개(4개월분)",
+          "description": "홍삼과 오메가3를 한번에!",
+          "mainImgUrl": "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F8.jpg?1541935201978",
+          "detailImgUrls": [
+            "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F8.jpg?1541660605124"
+          ]
+        },
+        {
+          "id": 11,
+          "category": "gift-set",
+          "title": "트리플케어 1000MG/30캡슐 x 1개 (1개월분)",
+          "description": "비타민, 미네랄, 오메가3 기능성분 15가지, 16여종 다양한 부원료",
+          "mainImgUrl": "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F5.jpg?1541935205132",
+          "detailImgUrls": [
+            "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F5.jpg?1541949511368"
+          ]
+        },
+        {
+          "id": 12,
+          "category": "gift-set",
+          "title": "[클릭시할인] 클레오파트라의 시크릿 여왕의 석류진 프리미엄 28P (28일분)",
+          "description": "갱년기 여성의 건강에 도움을 줄 수 있음",
+          "mainImgUrl": "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F2.jpg?1541935201807",
+          "detailImgUrls": [
+            "https://cdn.glitch.com/b66521a7-74e1-4974-9e82-097604da9b55%2F2.jpg?1541660595975"
           ]
         }
       ],
@@ -209,6 +239,42 @@
           "productId": 9,
           "title": "gift-wrapped",
           "price": "9,900"
+        },
+        {
+          "id": 19,
+          "productId": 10,
+          "title": "no-wrappend",
+          "price": "59,000"
+        },
+        {
+          "id": 20,
+          "productId": 10,
+          "title": "gift-wrapped",
+          "price": "59,000"
+        },
+        {
+          "id": 21,
+          "productId": 9,
+          "title": "no-wrappend",
+          "price": "79,000"
+        },
+        {
+          "id": 22,
+          "productId": 9,
+          "title": "gift-wrapped",
+          "price": "79,000"
+        },
+        {
+          "id": 23,
+          "productId": 9,
+          "title": "gift-wrapped",
+          "price": "210,000"
+        },
+        {
+          "id": 24,
+          "productId": 9,
+          "title": "no-wrappend",
+          "price": "210,000"
         }
       ],
       "cartItems": [
