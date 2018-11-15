@@ -107,12 +107,13 @@ vs uncontrolled Componets
 
 > input 이벤트와 change 이벤트의 차이점 찾아보기(DOM에서는 다름)
 
-- React에서는 사용자의 입력이 일어날 때마다 뭔가를 해주고 싶다면 -> input, select, textarea등에서 onChange속성을 사용하면, React가 알아서 잘 붙여준다.
+- React에서는 사용자의 입력이 일어날 때마다 뭔가를 해주고 싶다면 -> <input>, <select>, <textarea> 등에서  `onChange`속성을 사용하면, React가 알아서 잘 붙여준다.
 
-- React에서는 value로 제어되는 컴포넌트로 만들어준 후, onChange로 ....???
+- React에서는 value로 제어되는 컴포넌트로 만들어준 후, onChange로 
 
-- e.target.value에는 지금 선택된 옵션의 value값이 들어있습니다. 
+- e.target.value에는 지금 선택된 옵션의 value값이 들어있다. 
 
+## 제어되는 컴포넌트(Controlled Componentes)
 제어되는 컴포넌트?
 - input,select, textarea가 화면을 그리는 기능만을 갖게 만들어주는 것이다. 그 자체로는 상태가 변경되지도 않고 제어되지 않게 만드는 것이다.
 - 제어되는 컴포넌트는 React의 상태를 바꿔야 화면이 바뀌게 되는 것이다. 
