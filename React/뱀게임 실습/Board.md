@@ -1,1 +1,1 @@
-![Board 손코딩](./Board.jpg){: width="200" height="200"}
+![Board 손코딩](./Board.jpg){: width="100px" height="100px"}
