@@ -48,6 +48,7 @@
 
 ### 불변성을 유지할 수 있게하는 라이브러리
 ####immutable.js
+[immutable.js 예시 코드](https://repl.it/@JihyeHwang09/immutablejs?language=javascript)
 #### immer
 - immer가 점점 뜨고 있음. 페이스북도 immer 사용을 권장
 - immer는 내장 객체와 내장 배열을 사용.
