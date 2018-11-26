@@ -96,9 +96,10 @@ cf) 모바일 버전 먼저 만들기
 - 가장 대중적으로 사용되는 방식
 - 되도록 이 방법을 사용하는 것을 추천
 - 손이 훨씬 편해짐
-- css 모듈을 사용할 때는 Camel Case로 코딩.(-을 사용하면 []표기법을 사용해야한다.)-> Camel Case로 코딩하면, 점표기법 사용 가능
+- css 모듈을 사용할 때는 Camel Case로 코딩.(-을 사용하면, []표기법을 사용해야한다.)-> Camel Case로 코딩하면, 점표기법 사용 가능
 - 'styles' 자리에는 's'로 쓰면 편하다 
 - 유일하고 식별 가능한 클래스 이름을 **자동**으로 붙여줌
+
 import React, { Component } from 'react';
 import styles from './Button.module.css'; // Import css modules stylesheet as styles
 import './another-stylesheet.css'; // Import regular stylesheet
@@ -135,14 +136,14 @@ cf) 식별자로 쓸 수 없는 속성의 경우, 대괄호 표기법 사용 (�
 
 # storybook
 - 통신하는 코드가 있으면, 부작용이 있는 컴포넌트임
-- 부작용이 있는 컴포넌트는 태스트하기 어렵다
+- 부작용이 있는 컴포넌트는 테스트하기 어렵다
 - 역할과 책임을 잘게 쪼개서 컴포넌트를 나누기(관례임)
 - 화면을 그리는 컴포넌트, 외부 세계와 통신하는(부작용이 있는) 컴포넌트로 나누기(서로 다른 컴포넌트로 나누기)
 
 
 
 ---
-Presentational 컴포넌트
+##Presentational 컴포넌트
 (데이터가 아닌) UI 상태를 관리하기 위해 state를 갖는 경우가 있습니다.
 ex) 마우스의 좌표
 - Presentational 컴포넌트는 외부 코드에 의존하지 않게 하는 게 좋다
@@ -150,7 +151,7 @@ ex) 마우스의 좌표
 
 
 
-
+```js
 React.createContext({
   username: 'fast',
   id: 0,
@@ -158,3 +159,4 @@ React.createContext({
   logout: () => {}
 })
 provider가 없을 때, {}안의 값이 default값으로 사용됨
+```
