@@ -1,11 +1,11 @@
 
-- 강제로 상태를 초기화 하고 싶은 순간레 다른 key를 넣어주면 된다
+- 강제로 상태를 초기화 하고 싶은 순간에 다른 key를 넣어주면 된다.
 - 
 
 - 1. redirect 컴포넌트를 렌더링하거나 
 - 2. history 객체의 push나 replace 메소드를 사용해서 주소표시줄의 상태를 바꿀 수 있다.
 - hoc를 써서 macth, location, history를 사용하게 할 수 있다. Provider, consumer와 비슷한 게 라우터에도 있다
-- withRouter hoc를 둘러주면, 바로 HeaderView에 꽂아줄 수 있다
+- withRouter hoc를 둘러주면, 바로 HeaderView에 꽂아줄 수 있다.
 - 모든 컴포넌트에 다 둘러주면 의존성이 생기니까 필요할 때만 둘러주자.
 
 
