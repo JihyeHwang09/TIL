@@ -25,7 +25,7 @@ cf) Homapage
   key: 'ac3df4', // not with HashHistory!
   <!-- 경로 -->
   pathname: '/somewhere'
-  <!-- 쿼라 스트링 -->
+  <!-- 쿼리 스트링 -->
   search: '?some=search-string',
   hash: '#howdy',
   state: {
