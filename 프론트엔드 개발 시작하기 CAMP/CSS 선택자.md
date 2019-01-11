@@ -8,6 +8,7 @@
 
 > selector(대상) {property(속성):value(값)}
 
+```css
 <head>
     <style type="text/css">
     h1 {font-size: 100%} 
@@ -16,8 +17,8 @@
     img {border: 0}
     </style>
 </head> 
-
-
+```
+```css
 <head>
     <style type="text/css">
     h1, h2, h3, h4, h5,h6{font-wieght: normal}   
@@ -27,8 +28,8 @@
     </style>
 
 </head> 
-
-
+```
+```css
 <head>
     <style type="text/css">
     * {margin:0:padding:0};
@@ -37,8 +38,8 @@
     p.declation * {text-transform:capitalize}
     </style>
 </head> 
-
-
+```
+```css
 <head>
     <style type="text/css">
     p.note{}
@@ -47,8 +48,8 @@
     .positionAbs{}
     </style>
 </head> 
-
-
+```
+```css
 <head>
     <style type="text/css">
     p.note.floatLeft{}
@@ -59,7 +60,8 @@
     .positionAbs{}
     </style>
 </head> 
-
+```
+```css
 <head>
     <style type="text/css">
     ul#nav{}
@@ -69,7 +71,8 @@
     #site_info{}
     </style>
 </head> 
-
+```
+```css
 <head>
     <style type="text/css">
     p strong{}
@@ -82,7 +85,7 @@
     h3 span {}
     </style>
 </head> 
-
+```
 
 # CSS 선택자(Selector)
 
@@ -149,22 +152,22 @@ ex2)
 속성 선택자 (Attribute Selector)
     : 속성 선택자[] 앞에 아무것도 붙어있지 않다면. *가 생략되어 있다고 보면 된다. 
 
-    [id] { ... }
-    -> id 속성을 가지고 있다면~
-    ex) 
-    a[id] { ... }
-    -> a요소가 id 속성값을 가지고 있다면~
+[id] { ... }
+-> id 속성을 가지고 있다면~
+ex) 
+a[id] { ... }
+-> a요소가 id 속성값을 가지고 있다면~
 
-    [class] { ... }
-    [title] { ... }
-    [shape] { ... }
+[class] { ... }
+[title] { ... }
+[shape] { ... }
 
-    [shape][title]{ ... }
-    -> shape과 title 속성을 둘 다 가지고 있다면~
+[shape][title]{ ... }
+-> shape과 title 속성을 둘 다 가지고 있다면~
 
 
-    <area shape="" coords="" href="">
-    <area shape="" coords="" href="" title="">
+<area shape="" coords="" href="">
+<area shape="" coords="" href="" title="">
 
 
 
@@ -182,42 +185,42 @@ ex2)
 
 
 
-    [id="about-css] { ... }
-    -> id값이 about-css라면~ 해당 요소를 선택해서 꾸며주게 된다. 
-    이걸 쉽게 쓰라고 만들어진 표현법이 hash(#) 표현법이다. 
-    #about-css { ... }
+[id="about-css] { ... }
+-> id값이 about-css라면~ 해당 요소를 선택해서 꾸며주게 된다. 
+이걸 쉽게 쓰라고 만들어진 표현법이 hash(#) 표현법이다. 
+#about-css { ... }
 
-    [class="note"] { ... }
-    .note { ... }
-
-
+[class="note"] { ... }
+.note { ... }
 
 
-^="": ~로 시작하는 것
+
+
+`^=""`: ~로 시작하는 것
 ex) 
 [title^="Scalable"] { ... }
 -> title 요소 중,  ""안의 Scalable이라는 단어로 시작하는 것을 모두 찾고 싶을 때
 
 
-$="": ~로 끝나는 것
+`$=""`: ~로 끝나는 것
 ex) 
 [title$="Language"] { ... }
 -> title 요소 중,  ""안의 Language이라는 단어로 끝나는 것을 모두 찾고 싶을 때
 
-*="": ~를 포함하는 것
+`*=""`: ~를 포함하는 것
 ex) 
 [title*="Markup"] { ... }
--> title 요소 중,  ""안의 Markup이라는 단어를 포함하는 것을 모두 찾고 싶을 
+-> title 요소 중,  ""안의 Markup이라는 단어를 포함하는 것을 모두 찾고 싶을 때
 -> CSS는 완벽하게 대소문자를 구분하기 때문에 "Markup"과 "markup"을 다르게 받아들인다. 
 
-    [href^="http://"] { ... }
-    -> href 속성값이 ^로 시작한다면, 속성값이 "http://"로 (""안의 단어로) 꼭 시작해야 한다.
+[href^="http://"] { ... }
+-> href 속성값이 ^로 시작한다면, 속성값이 "http://"로 (""안의 단어로) 꼭 시작해야 한다.
 
-    [src$=".svg"] { ... }
-    -> .svg는 확장자임('.'으로 시작하므로) 확장자가 svg인 파일들을 이미지로 불러오는 모든 요소들을 찾게되는 것이다.
+[src$=".svg"] { ... }
+-> .svg는 확장자임('.'으로 시작하므로) 확장자가 svg인 파일들을 이미지로 불러오는 모든 요소들을 찾게되는 것이다.
 
-    [src*="phone"] { ... }
-    -> src에 포함된 단어 중에 "phone"이 들어간 걸 모두 찾아온다. 
+[src*="phone"] { ... }
+-> src에 포함된 단어 중에 "phone"이 들어간 걸 모두 찾아온다. 
 
 
 
