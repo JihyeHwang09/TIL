@@ -89,13 +89,12 @@
 
 # CSS 선택자(Selector)
 
- 요소 선택자 (Element Type Selector)
+* `요소 선택자 (Element Type Selector)`
     figure { ... }
- 그룹핑 (Grouping)
-    `a`, `abbr`, `.note`, `#about-css` { ... }
-    -> class도 묶어 줄 수 있다.
+* `그룹핑 (Grouping)`
+    `a`, `abbr`, `.note`, `#about-css` { ... } <br> -> class도 묶어 줄 수 있다.
 
-전체 선택자 (Universal Selector)
+* 전체 선택자 (Universal Selector)
     * { ... }
     ->*를 사용해서 모든 요소를 선택할 때 쓴다. 
     -  특정 영역 내에 있는 모든 요소를 선택할 때도 쓸 수 있다.
@@ -103,39 +102,39 @@
     -> id가 about-css 속성값을 가진 내부의 모든 요소를 가리키게 된다.
     section이라든가 body는 포함되지 X. 
 
-클래스 선택자 (Class Selector)
+* `클래스 선택자 (Class Selector)`
     - 대소문자 구분하기 때문에 반드시 확인해야 한다.
     .class { ... }
 
-멀티 클래스 선택자 (Multi Class Selector)
-    <비교>
-     * 띄어쓰기에 따라 의미가 완전히 달라진다. 
-    .class1.class2 { ... }: 하나의 요소가 2개의 클래스를 가진 형태 (멀티 클래스 선택자)
-    .class1. class2 { ... }: class1을 가진 요소가 내부에 class2를 가지고 있을 때 쓴다. (자손 선택자)
+* `멀티 클래스 선택자 (Multi Class Selector)`
+<비교>
+ * 띄어쓰기에 따라 의미가 완전히 달라진다. 
+.class1.class2 { ... }: 하나의 요소가 2개의 클래스를 가진 형태 (멀티 클래스 선택자)
+.class1. class2 { ... }: class1을 가진 요소가 내부에 class2를 가지고 있을 때 쓴다. (자손 선택자)
 
 
-     ex) .note.box {}
-     ->note라는 클래스 가진 요소 중에 box라는 클래스를 가지고 있다면, note와 box 클래스 2개가 모두 가지고 있다면~
+ ex) .note.box {}
+ ->note라는 클래스 가진 요소 중에 box라는 클래스를 가지고 있다면, note와 box 클래스 2개가 모두 가지고 있다면~
 
 
-아이디 선택자 (ID Seletor): id값이 동일한 대상을 찾는다. 
-    #id { ... }
-    ex) #about-css {}
-    -> id가 about-css인 요소에 적용한다. 
+* `아이디 선택자 (ID Seletor)`: id값이 동일한 대상을 찾는다. 
+#id { ... }
+ex) #about-css {}
+-> id가 about-css인 요소에 적용한다. 
 
 
 자손 선택자 (Descendent Selector):  클래스 or 아이디를 이용해서 꾸밀 수 있다. 
-    h1 abbr {  ... }
-    -> 'h1이 포함한 abbr을 찾아서 꾸며주세요~' 라는 뜻
-    .note abbr { ... }
+h1 abbr {  ... }
+<br>-> 'h1이 포함한 abbr을 찾아서 꾸며주세요~' 라는 뜻
+.note abbr { ... }
    
 
 자식 선택자 (Descendent Selector): 부모의 직접적인 자식만 나타낸다. 
-    .parent > .child { ... }
+.parent > .child { ... }
 
 ## 자손 선택자 vs 자식 선택자
-자손 선택자: ex) 아들, 손주
-자식 선택자: 직계 자식만 선택할 수 있음. ex) 아들
+* `자손 선택자`: ex) 아들, 손주
+* `자식 선택자`: 직계 자식만 선택할 수 있음. ex) 아들
 ```
 ex1) <h1>
         <strong>
@@ -144,14 +143,14 @@ ex1) <h1>
     h1의 자손 선택자: <strong>, <strong>, <abbr>
     h1의 자식 선택자: 바로 밑의 <strong>만 해당 됨. 
 ```
+```
 ex2) 
     body * {} : body 요소 내부의 모든 자손 선택
     body > * {} : body 요소 내부의 모든 자식(Child) 선택
+```
 
 
-
-속성 선택자 (Attribute Selector)
-    : 속성 선택자[] 앞에 아무것도 붙어있지 않다면. *가 생략되어 있다고 보면 된다. 
+`속성 선택자 (Attribute Selector)`: 속성 선택자[] 앞에 아무것도 붙어있지 않다면. *가 생략되어 있다고 보면 된다. 
 
 [id] { ... }
 -> id 속성을 가지고 있다면~
@@ -222,9 +221,9 @@ ex)
 
 
 
-고급 속성 선택자
+`고급 속성 선택자`
 
-가상 클래스 선택자(Link Pseudo-class)
+`가상 클래스 선택자(Link Pseudo-class)`
 a:link, a:visited{}
 anchor element가 기본적으로 가지고 있는 상태는 link element이다.
 1번 이상 방문한 사이트는 표시가 되어야 한다. -> visited 방문했다는 가상클래스를 사용할 수 있다. 
