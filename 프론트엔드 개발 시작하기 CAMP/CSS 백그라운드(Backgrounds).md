@@ -70,11 +70,11 @@ body {
 
 .bg-image {
   background: url("../images/NewYork-US.jpg) no-repeat center -20px;
-  <!-- background-size: 100%쓰면 이미지가 다 들어오기는 한다. But 비율이 맞지 않는다. 이미지가 작을 경우, 늘려서 끼워맞춰지게 됨. ->이미지가 왜곡됨 -->
+  <!-- background-size: 100%쓰면 이미지가 다 들어오기는 한다. <br>But 비율이 맞지 않는다. 이미지가 작을 경우, 늘려서 끼워맞춰지게 됨.<br> ->이미지가 왜곡됨 -->
   <!-- background-size: contain; 사용 -->
    background-size: cover;
    
-  <!-- 이미지를 늘려서 끼워맞추는 게 X. 원래 비율대로 이미지를 넣되, 커버를 씌우듯이 이미지 넣을 공간만큼만 이미지를 넣는 것임.  -->
+  <!-- 이미지를 늘려서 끼워맞추는 게 X. <br>원래 비율대로 이미지를 넣되, 커버를 씌우듯이 이미지 넣을 공간만큼만 이미지를 넣는 것임.  -->
 
 }
 
