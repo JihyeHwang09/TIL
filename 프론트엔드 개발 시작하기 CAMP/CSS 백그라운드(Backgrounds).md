@@ -24,12 +24,12 @@
 `background-position`: x축 y축
 - ex) `background-position`: 20% 0%;
      `background-position`: 100% 0%;
-     // 오른쪽 끝
+  오른쪽 끝
 
 
 * `background-repeat`: 배경을 반복할지 여부를 설정한다.
-`background-repeat`: repeat | repeat-x | repeat-y | no-repeat
-기본값: repeat;
+* `background-repeat`: repeat | repeat-x | repeat-y | no-repeat
+* 기본값: repeat;
 
   - `repeat`
   - `repeat-x`: x축으로 배경 이미지 반복
@@ -43,7 +43,7 @@
 
 
 * `background`: 배경 속성을 모아 작성하는 속기법
-- 모든 배경 속성을 묶어서 쓰고 싶을 때, `background를 사용.
+- 모든 배경 속성을 묶어서 쓰고 싶을 때, `background`를 사용.
 
 - transparent는 기본값이기 떄문에 안 넣어줘도 상관 X.
 
