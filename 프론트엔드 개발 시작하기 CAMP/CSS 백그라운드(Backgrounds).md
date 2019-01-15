@@ -2,10 +2,10 @@
   ------------------------------------------------
   CSS 배경(Background) 스타일링
   ------------------------------------------------
-  Background Design
-  : 요소의 배경(background)은 요소의  content-box, border-box 아래에 있는 영역이다.
-  (margin-box 제외)
-  모던 브라우저에서는 배경을 차지하는 영역을 background-clip 속성을 사용하여 변경할 수 있다.
+Background Design
+: 요소의 배경(background)은 요소의  content-box, border-box 아래에 있는 영역이다.
+(margin-box 제외)
+모던 브라우저에서는 배경을 차지하는 영역을 background-clip 속성을 사용하여 변경할 수 있다.
 
 *  `background-color`: 배경색을 설정한다.
 * `background-image`: 요소의 배경에 표시할 배경 이미지를 지정한다.
@@ -72,7 +72,7 @@ body {
   background: url("../images/NewYork-US.jpg) no-repeat center -20px;
   <!-- background-size: 100%쓰면 이미지가 다 들어오기는 한다. But 비율이 맞지 않는다. 
   이미지가 작을 경우, 늘려서 끼워맞춰지게 됨.
-  ->이미지가 왜곡됨 -->
+  -> 이미지가 왜곡됨 -->
   <!-- background-size: contain; 사용 -->
    background-size: cover;
    
