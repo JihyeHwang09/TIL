@@ -5,7 +5,7 @@
 
 
 - 맨 마지막에 있는 요소의 `nextElmentSibling`은 `null`을 반환한다. 
-따라서, `nextElmentSibling.nextElmentSibling`은 `null.nextElmentSibling`이 되므로 -> **타입 에러가 난다.*8
+따라서, `nextElmentSibling.nextElmentSibling`은 `null.nextElmentSibling`이 되므로 -> **타입 에러가 난다.**
 
 
 - 위로 버튼을 눌렀을 때, 
