@@ -9,7 +9,6 @@
 
 - 위로 버튼을 눌렀을 때, 
 
-
 - `mouseover`는 부모 요소의 경계선을 지날 때 뿐만 아니라, **자식 요소의 경계선을 지나쳤을 때도** 부모 요소의 이벤트 리스너가 실행된다.
 #### 이런 현상이 일어나는 이유
 - `mouseover`, `mouseout`은 **버블링이 일어난다.**
@@ -48,23 +47,23 @@
 - Style을 수정할 때는 괜찮지만, 자바스크립트를 수정할 때는 그 때마다 새로고침을 눌러주는 게 좋다. 
 
 
-### git으로 협업할 때 주의할 점
+### Git으로 협업할 때 주의할 점
 - `개행문자` 때문에 문제가 생길 수 있다.
 - window 사용자는 설정을 해야 한다.
 - max: LF(/n)
 - window: CRLF(/r/n)
 
-#### window 사용자 개행문자 관련 설정 방법
+#### Window 사용자 개행문자 관련 설정 방법
 - 자동으로 해결하는 방법이 있음(git에 내장된 기능을 이용)
 - `autocrlf`기능을 켜기
 - git이 파일을 가져올 때는 lf를 crlf로 저장해준다.
 - 컴퓨터에서 파일을 저장한 걸 git에 커밋하면 lf로 바꿔줘서 git에 올려준다.
 
-#### git bash에 입력
+#### Git bash에 입력
 - `git config--global core.autocrlf`를 입력한 후에 true가 반환되면 그대로 쓰면 된다.
 - 아무것도 안 뜨면 설정이 안된 것이므로 -> `git config--global core.autocrlf true`를 입력
 
-### git 기본적인 명령어
+### Git 기본적인 명령어
 - git pull
 - git add .
 - git commit -m "커밋 메시지"
