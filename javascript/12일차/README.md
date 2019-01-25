@@ -1,22 +1,24 @@
 ### Quiz 풀이
 
-- `previousElementSibling`는 가장 앞에 있는 요소에 주면, null이 반환된다.
-- `insertBefore`에 2번째 인자로 null이 들어가면 `appendChild`와 똑같이 동작한다.
+- `previousElementSibling`는 가장 앞에 있는 요소에 주면, `null`이 반환된다.
+- `insertBefore`에 2번째 인자로 `null`이 들어가면 `appendChild`와 **똑같이 동작한다.**
 
 
-- 맨 마지막에 있는 요소의 nextElmentSibling은 null을 반환한다. 따라서, nextElmentSibling.nextElmentSibling은 null.nextElmentSibling이 되므로 타입 에러가 난다.
+- 맨 마지막에 있는 요소의 `nextElmentSibling`은 `null`을 반환한다. 
+따라서, `nextElmentSibling.nextElmentSibling`은 `null.nextElmentSibling`이 되므로 -> **타입 에러가 난다.*8
 
 
 - 위로 버튼을 눌렀을 때, 
 
-- `mouseover`는 부모 요소의 경계선을 지날 때 뿐만 아니라, **자식 요소의 경계선을 지나쳤을 때도** 부모 요소의 이벤트 리스너가 실행된다.
+- `mouseover`는 부모 요소의 경계선을 지날 때 뿐만 아니라, 
+**자식 요소의 경계선을 지나쳤을 때도** 부모 요소의 이벤트 리스너가 실행된다.
 #### 이런 현상이 일어나는 이유
 - `mouseover`, `mouseout`은 **버블링이 일어난다.**
 - `mouseenter`, `mouseleave`은 **버블링이 일어나지 않는다.**
 
 ### 2가지 방법
-1. DOM객체를 실제로 만들어서 넣기
-- html 문서에 직접 써넣을 수 없는 경우
+1. DOM 객체를 실제로 만들어서 넣기
+- Html 문서에 직접 써넣을 수 없는 경우
 - 코드 작성 시점에 정확히 요소가 몇 개 표시될 지 모를 경우
     - ex) 사용자의 입력을 받아서 할 경우(Todo List 할 일 추가할 때)
     - ex) createElement, appendChild, removeChild 등을 사용
@@ -24,10 +26,10 @@
 - 코드 작성 시점에 정확히 요소가 몇 개 표시될 지 아는 경우
     - ex) display: block or none했다가 나타나게 하기
 
+- 2가지 방법 다 많이 사용되므로 필요에 따라 그때그때 다르게 사용하자.
 
-- 2가지 방법 다 많이 사용됨. 필요에 따라 그때그때 다르게 사용
-
-- 스타일은 CSS에 작성하고, 자바스크립트에서는 클래스를 넣었다 뺐다 해주자.(자바스크립트에서 스타일을 넣고 빼는 건 할 수 있으나 역할과 책임에 맞지 않는다.)
+- 스타일은 CSS에 작성하고, 자바스크립트에서는 클래스를 넣었다 뺐다 해주자.
+(자바스크립트에서 스타일을 넣고 빼는 건 할 수 있으나 역할과 책임에 맞지 않는다.)
 
 
 ## 게임을 만들 때 생각하는 절차
@@ -38,9 +40,11 @@
 - 사용자의 입력을 받았을 때 어떤 상태가 될 지, 상태의 구조는 어떻게 될 지
 - 프로그램이 기억하는 무언가가 모두 `상태`가 될 수 있다.
     - ex) `textContent`는 해당 텍스트를 기억해뒀다가 화면을 1초에 60번씩 계속 그리고 있는 것이다.
-- `classList.add`, `textContent`의 상태를 바꾸면 화면이 자동으로 다시 그려지게 기능이 내장되어 있다.(브라우저 내장 상태이기 때문에)-> 굳이 '그리기'라는 절차를 코딩하지 않아도 된다.
-    - ex) score라는 상태는 우리가 기억하고 있는 상태이기 때문에 개발자가 직접 일일히 화면을 그려주는 작업을 해야 한다. (score를 바꿀 때마다 화면이 다시 그려지는 게 X. )
-- `React`를 이용하면, 우리가 만든 상태를 사용할 때도 그 상태를 바꾸면, 자동으로 화면을 다시 그려준다. 
+- `classList.add`, `textContent`의 **`상태`를 바꾸면 화면이 자동으로 다시 그려지게 기능이 내장되어 있다.**
+(브라우저 내장 상태이기 때문에)-> 굳이 '그리기'라는 절차를 코딩하지 않아도 된다.
+    - ex) score라는 상태는 우리가 기억하고 있는 상태이기 때문에 개발자가 직접 일일히 화면을 그려주는 작업을 해야 한다. 
+    (score를 바꿀 때마다 화면이 다시 그려지는 게 X. )
+- `React`를 이용하면, 우리가 만든 상태를 사용할 때도 그 상태를 바꾸면, **자동으로 화면을 다시 그려준다. **
 - `React`는 기술이기도 하지만 사고방식이라고 볼 수 있다. 
     - 게임에서 사용하던 기술들을 `React`에 많이 가져왔다. 프로그래밍하기에 편하도록 바꿔준 기술이다. 
 - `Parcel`은 자바스크립트가 수정될 때마다 다시 실행된다. 
@@ -50,21 +54,23 @@
 ### Git으로 협업할 때 주의할 점
 - `개행문자` 때문에 문제가 생길 수 있다.
 - window 사용자는 설정을 해야 한다.
-- max: LF(/n)
-- window: CRLF(/r/n)
+- max: `LF(/n)`
+- window: `CRLF(/r/n)`
 
 #### Window 사용자 개행문자 관련 설정 방법
 - 자동으로 해결하는 방법이 있음(git에 내장된 기능을 이용)
 - `autocrlf`기능을 켜기
-- git이 파일을 가져올 때는 lf를 crlf로 저장해준다.
-- 컴퓨터에서 파일을 저장한 걸 git에 커밋하면 lf로 바꿔줘서 git에 올려준다.
+- git이 파일을 가져올 때는 `LF(/n)`를 `CRLF(/r/n)`로 저장해준다.
+- 컴퓨터에서 파일을 저장한 걸 git에 커밋하면 `LF(/n)`로 바꿔줘서 Git에 올려준다.
 
 #### Git bash에 입력
-- `git config--global core.autocrlf`를 입력한 후에 true가 반환되면 그대로 쓰면 된다.
+- `git config--global core.autocrlf`를 입력한 후에 `true`가 반환되면 그대로 쓰면 된다.
 - 아무것도 안 뜨면 설정이 안된 것이므로 -> `git config--global core.autocrlf true`를 입력
 
 ### Git 기본적인 명령어
-- git pull
-- git add .
-- git commit -m "커밋 메시지"
-- git push
+ ```js
+git pull
+git add .
+git commit -m "커밋 메시지"
+git push
+```
