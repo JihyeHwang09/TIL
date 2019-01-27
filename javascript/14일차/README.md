@@ -1,7 +1,6 @@
 ---
 title: 자바스크립트 13일차
 date: 2019-01-27 19:54:29
-thumbnail: https://user-images.githubusercontent.com/37353837/51800186-11642200-226f-11e9-87f3-7faef89a91cb.png
 categories:
   - front-end
   - javaScript
