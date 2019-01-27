@@ -1,13 +1,3 @@
----
-title: 자바스크립트 14일차
-date:
-categories:
-  - front-end
-  - javaScript
-tags:
-  - javaScript
----
-
 # 클래스
 
 - 프로토타입은 기능을 재사용하기 위해서 사용한다.
