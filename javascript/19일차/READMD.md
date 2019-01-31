@@ -227,7 +227,7 @@ func(); // 출력 결과: Failed to fetch
 ```
 
 단, Promise 객체에 대해 await 구문을 사용하지 않는 경우, 에러가 발생해도 catch 블록으로 코드의 실행 흐름이 이동하지 않는다는 사실을 기억하세요.
-- 비동기 함수인 경우 -> rejected 상태인 함수를 **await구문을 사용하지 않으면**, 에러가 발생해도 catch 블록으로 크드의 실행 흐름이 이동하지 않는다!!
+- 비동기 함수인 경우 -> rejected 상태인 함수를 **await구문을 사용하지 않으면**, 에러가 발생해도 catch 블록으로 코드의 실행 흐름이 이동하지 않는다!!
 ```js
 async function func() {
   try {
