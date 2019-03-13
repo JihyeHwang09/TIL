@@ -1,4 +1,4 @@
-"use strict"
+// 게시판 구현
 const list = [];
 let no = 0;
 const prompt = require('prompt-sync')();
