@@ -423,4 +423,170 @@ class StaticTest {
     }
 }
 ```
+### `final`- 마지막의, 변경될 수 없는
+> final이 사용될 수 있는 곳 - 클래스, 메서드, 멤버변수, 지역변수
+#### 대상
+- 클래스
+    - 변경될 수 없는 클래스, 확장될 수 없는 클래스가 된다.
+    - 그래서 final로 지정된 클래스는 다른 클래스의 조상이 될 수 없다. 
+- 메서드
+    - 변경될 수 없는 메서드
+    - final로 지정된 메서드는 **오버라이딩을 통해 재정의될 수 없다.** 
 
+- 멤버변수 / 지역변수
+    - 변수 앞에 final이 붙으면, **값을 변경할 수 없는 상수가 된다.**
+
+- cf) 대표적인 final 클래스: String, Math
+```java
+final class FinalTest {
+    final int MAX_SIZE = 10; // 멤버변수
+    
+    final void getMaxSize () {
+        final LV = MAX_SIZE; // 지역변수
+        return MAX_SIZE;
+    }
+    class Child extends FinalTest {
+        void getMaxSize() {} // 오버라이딩
+    }   
+}
+```
+### 4.4 생성자를 이용한 final 멤버변수 초기화 
+```java
+class Card {
+    final int NUMBER; // 상수지만 선언과 함께 초기화하지 않고
+    final String KIND;  /// 생성자에서 단 한 번만 초기화할 수 있다.
+    static int width = 100;
+    static int height = 250;
+    Card (String kind, int num) {
+        KIND = kind;
+        NUMBER = num;
+    }
+    Card () {
+        this("HEART", 1);
+    }
+    public String toString() {
+        return "" + KIND + " " + NUMBER;
+    }
+    public static void main(String args[]) {
+        Card c = new Card("HEART", 10);
+    // c.NUMBER = 5; // 에러!
+        System.out.println(c.KIND);
+        System.out.println(c.NUMBER);
+    }
+}
+```
+### 4.5 abstract- 추상의, 미완성의
+>  abstract이 사용될 수 있는 곳- 클래스, 메서드
+#### 대상
+- 클래스: **클래스 내에 추상메서드가 선언**되어 있음을 의미한다.
+- 메서드: 선언부만 작성하고 구현부는 작성하지 않은 **추상메서드**임을 알린다.
+
+- cf) 추상메서드가 없는 클래스도 abstract를 붙여서 추상클래스로 선언하는 것이 가능하기는 하지만,
+그렇게 해야 할 이유가 없다. 
+```java
+abstract class AbstarctTest { // 추상클래스
+    abstract void move(); // 추상메서드
+}
+```
+### 4.6 접근 제어자(access modifier)
+- 멤버 또는 클래스에 사용되어, 외부로부터의 접근을 제한한다.
+> 접근 제어자가 사용될 수 있는 곳- 클래스, 멤버변수, 메서드, 생성자
+- private- **같은 `클래스`**내에서만
+- default- **같은 `패키지`**내에서만
+- protected
+    - 1) **같은 `패키지`**내
+    - 2) **다른 패키지의 자손클래스**
+- public- 접근 제한이 전혀 없다. 
+### 4.7 접근 제어자를 이용한 캡슐화
+#### 접근 제어자를 사용하는 이유
+- 외부로부터 데이터를 보호하기 위해서
+- 외부에는 불필요한, 내부적으로만 사용되는, 부분을 감추기 위해서
+
+```java
+class Time {
+    private int hour;
+    private int minute;
+    private int second;
+    
+    Time (int hour, int minute, int second) {
+        setHour(hour);
+        setMinute(minute);
+        setSecond(second);
+    }
+    public int getHour() { return hour; }
+    public void setHour(int hour) {
+        if (hour < 0 || hour > 23) return;
+        this.hour = hour;
+    }   
+    // ...중간 생략
+    public String toString () {
+        return hour + ":" + minute + ":" + second;
+    }
+    public static void main(String[] args) {
+        Time t = new Time(12, 35, 20);
+//        System.out.println(t.toString());
+        System.out.println(t); // 12:35:30
+//        t.hour = 13; // 에러!
+        // 현재 시간보다 1시간 후로 변경한다.
+        t.setHour(t.getHour() + 1); 
+        System.out.println(t); // 13:35:30
+    } 
+}
+```
+### 4.8 생성자의 접근 제어자
+- 일반적으로 생성자의 접근 제어자는 클래스의 접근 제어자와 일치한다.
+- 생성자에 접근 제어자를 사용함으로써 인스턴스의 생성을 제한할 수 있다.
+
+```java
+final class Singleton {
+    private static Singleton s = new Singleton();
+    
+    // getInstance()에서 사용될 수 있도록 인스턴스가 미리 생성되어야 하므로
+    // static이어야 한다.  
+    private Singleton () { // 생성자
+        // ...
+    }
+    public static Singleton getInstance () {
+        if (s == null) {
+            s = new Singleton();
+        }
+        return s;
+    }
+}
+class singletonTest {
+    public static void main(String[] args){
+//  singleton s = new singleton(); // 에러!
+    singleton s1 = Singleton.getInstance();      
+    }
+}
+
+```
+### 4.9 제어자의 조합
+- 1. 메서드에 static과 abstract를 함께 사용할 수 없다.
+> static 메서드는 몸통(구현부)이 있는 메서드에만 사용할 수 있기 때문
+- 2. 클래스에 abstract와 final을 동시에 사용할 수 없다.
+> 클래스에 사용되는 final은 확장할 수 없다는 의미이고,
+> abstract는 상속을 통해서 완성되어야 한다는 의미이므로 서로 모순되기 때문
+- 3. abstract 메서드의 접근 제어자가 private일 수 없다.
+> abstract 메서드는 자손클래스에서 구현해주어야 하는데,
+> 접근제어자가 private이면, 자손클래스에서 접근할 수 없기 때문
+- 4. 메서드에 private과 final을 같이 사용할 필요는 없다.
+> 접근 제어자가 private인 메서드는 오버라이딩될 수 없기 때문이다. 
+> 이 둘 중 하나만 사용해도 의미가 충분하다. 
+
+
+## 5. 다형성(polymorphism)
+### 5.1 다형성이란?
+- 여러 가지 형태를 가질 수 있는 능력
+- **하나의 참조변수로 여러 타입의 객체를 참조할 수 있는 것**
+-  -> **조상타입의 참조변수로 자손타입의 객체를 다룰 수 있는 것**
+```java
+class TV {
+    boolean power; // 전원상태(on/off)
+    int channel; // 채널
+    
+    void power () { power =!power; }
+    void channelUp () { ++channel; }
+    void channelDown () { --channel; }
+}
+```
