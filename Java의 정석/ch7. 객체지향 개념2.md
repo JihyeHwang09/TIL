@@ -588,5 +588,9 @@ class TV {
     void power () { power =!power; }
     void channelUp () { ++channel; }
     void channelDown () { --channel; }
+}    
+class CaptionTv extends Tv {
+    String text; // 캡션 내용
+    void caption () {/* 내용 생략 */}
 }
 ```
