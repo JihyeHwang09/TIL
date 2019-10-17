@@ -43,6 +43,7 @@
     }
 }
 ```
+### 제네릭 
 ```java
 class MyList2 {
     private Object[] ts;
